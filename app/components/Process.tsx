@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ProcessStep } from "@/app/types";
 
-const steps = [
+const steps: ProcessStep[] = [
   {
     num: "01",
     title: "مشاوره و بازدید",

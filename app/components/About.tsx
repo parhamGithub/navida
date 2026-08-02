@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Stat } from "@/app/types";
 
-const stats = [
+const stats: Stat[] = [
   { num: "10+", label: "سال تجربه‌ی اجرایی" },
   { num: "4", label: "حوزه‌ی خدمات تخصصی" },
   { num: "100%", label: "شفافیت در قرارداد" },

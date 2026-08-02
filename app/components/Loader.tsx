@@ -1,6 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import type { CubicBezier } from "@/app/types";
+
+const EASE: CubicBezier = [0.65, 0, 0.35, 1];
 
 export default function Loader() {
   return (
@@ -21,7 +24,7 @@ export default function Loader() {
             strokeLinejoin="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: [0.65, 0, 0.35, 1] }}
+            transition={{ duration: 2.1, ease: EASE }}
           />
           <motion.path
             d="M32 40 L92 102 M32 52 L92 90"
@@ -31,7 +34,7 @@ export default function Loader() {
             strokeLinejoin="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: [0.65, 0, 0.35, 1], delay: 0.25 }}
+            transition={{ duration: 2.1, ease: EASE, delay: 0.25 }}
           />
           <motion.path
             d="M32 40 L34 26 L37 40"
@@ -41,7 +44,7 @@ export default function Loader() {
             strokeLinejoin="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: [0.65, 0, 0.35, 1], delay: 0.25 }}
+            transition={{ duration: 2.1, ease: EASE, delay: 0.25 }}
           />
           <motion.path
             d="M74 102 L74 20 L92 20 L92 102"
@@ -51,7 +54,7 @@ export default function Loader() {
             strokeLinejoin="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: [0.65, 0, 0.35, 1], delay: 0.55 }}
+            transition={{ duration: 2.1, ease: EASE, delay: 0.55 }}
           />
         </svg>
 

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Service, StaggerContainer, StaggerItem } from "@/app/types";
 
-const services = [
+const services: Service[] = [
   {
     title: "طراحی و نقشه‌کشی",
     desc: "از ایده تا نقشه، با دقتی که می‌ماند. تهیه‌ی نقشه‌های معماری و سازه و اخذ مجوزهای لازم.",
@@ -43,12 +44,12 @@ const services = [
   },
 ];
 
-const container = {
+const container: StaggerContainer = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12 } },
 };
 
-const item = {
+const item: StaggerItem = {
   hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };

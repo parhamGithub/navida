@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { CubicBezier } from "@/app/types";
 
-const skyline =
+const EASE: CubicBezier = [0.65, 0, 0.35, 1];
+
+const skyline: string =
   "M0 300 L0 210 L60 210 L60 150 L120 150 L120 300 M150 300 L150 120 L230 120 L230 300 M260 300 L260 180 L300 180 L300 90 L340 90 L340 300 M558 300 L682 300 L682 296 L664 292 L664 286 L648 280 L648 274 L634 270 L628 110 L652 96 L660 84 L654 76 L646 76 L646 68 L638 68 L638 60 L632 60 L632 54 L620 50 L608 54 L608 60 L602 60 L602 68 L594 68 L594 76 L586 76 L580 84 L588 96 L612 110 L606 270 L592 274 L592 280 L576 286 L576 292 L558 296 L558 300 Z M620 50 L620 8 M614 22 L626 22 M615 40 L625 40 M900 300 L900 140 L960 140 L960 300 M990 300 L990 60 L1010 60 L1010 30 L1030 30 L1030 60 L1050 60 L1050 300 M1080 300 L1080 190 L1160 190 L1160 300 M1300 300 L1300 100 L1360 100 L1360 200 L1420 200 L1420 300 M1450 300 L1450 220 L1600 220 L1600 300";
 
 export default function Hero() {
@@ -61,7 +64,7 @@ export default function Hero() {
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: [0.65, 0, 0.35, 1] }}
+            transition={{ duration: 2.1, ease: EASE }}
           />
           <motion.path
             d="M32 40 L92 102 M32 52 L92 90"
@@ -73,7 +76,7 @@ export default function Hero() {
             animate={{ pathLength: 1 }}
             transition={{
               duration: 2.1,
-              ease: [0.65, 0, 0.35, 1],
+              ease: EASE,
               delay: 0.25,
             }}
           />
@@ -87,7 +90,7 @@ export default function Hero() {
             animate={{ pathLength: 1 }}
             transition={{
               duration: 2.1,
-              ease: [0.65, 0, 0.35, 1],
+              ease: EASE,
               delay: 0.55,
             }}
           />

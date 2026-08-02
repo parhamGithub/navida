@@ -1,5 +1,23 @@
 "use client";
 
+import type { ContactItem, NavLink } from "@/app/types";
+
+const quickLinks: NavLink[] = [
+  { href: "#about", label: "درباره ما" },
+  { href: "#services", label: "خدمات" },
+  { href: "#process", label: "روند کار" },
+];
+
+const contactItems: ContactItem[] = [
+  { label: "۰۹۱۲۳۷۰۱۶۹۱" },
+  { label: "تهران، خیابان قلعه مرغی، میدان گلچین، ساختمان امیران" },
+  { label: "navida-eng.ir", href: "#" },
+  { label: "@navida.eng", href: "#" },
+];
+
+const linkClassName =
+  "block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light";
+
 export default function Footer() {
   return (
     <footer className="border-t border-line mt-10 px-[6%] py-15 bg-black">
@@ -43,46 +61,36 @@ export default function Footer() {
           <h5 className="text-xs text-gold-dim tracking-[1px] mb-4 uppercase">
             دسترسی سریع
           </h5>
-          <a
-            href="#about"
-            className="block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light"
-          >
-            درباره ما
-          </a>
-          <a
-            href="#services"
-            className="block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light"
-          >
-            خدمات
-          </a>
-          <a
-            href="#process"
-            className="block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light"
-          >
-            روند کار
-          </a>
+          {quickLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={linkClassName}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         <div>
           <h5 className="text-xs text-gold-dim tracking-[1px] mb-4 uppercase">
             تماس
           </h5>
-          <p className="text-[13.5px] text-[#c9c2ac] mb-2.5">۰۹۱۲۳۷۰۱۶۹۱</p>
-          <p className="text-[13.5px] text-[#c9c2ac] mb-2.5">
-            تهران، خیابان قلعه مرغی، میدان گلچین، ساختمان امیران
-          </p>
-          <a
-            href="#"
-            className="block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light"
-          >
-            navida-eng.ir
-          </a>
-          <a
-            href="#"
-            className="block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light"
-          >
-            @navida.eng
-          </a>
+          {contactItems.map((item) =>
+            item.href ? (
+              <a
+                key={item.label}
+                href={item.href}
+                className={linkClassName}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <p key={item.label} className={linkClassName}>
+                {item.label}
+              </p>
+            )
+          )}
         </div>
       </div>
 

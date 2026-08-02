@@ -11,10 +11,13 @@ import CtaStrip from "@/app/components/CtaStrip";
 import Footer from "@/app/components/Footer";
 
 export default function HomeClient() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 2900);
+    const timer: ReturnType<typeof setTimeout> = setTimeout(
+      () => setShow(true),
+      2900
+    );
     return () => clearTimeout(timer);
   }, []);
 

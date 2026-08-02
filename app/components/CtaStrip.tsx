@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 
+const PHONE_NUMBER: string = "۰۹۱۲۳۷۰۱۶۹۱";
+const PHONE_HREF: string = "tel:+989123701691";
+
 export default function CtaStrip() {
   return (
     <section id="contact" className="text-center py-30 px-[6%]"
@@ -20,11 +23,11 @@ export default function CtaStrip() {
           پروژه‌ی بعدی شما، وعده‌ی نویداست
         </h2>
         <a
-          href="tel:+989123701691"
+          href={PHONE_HREF}
           className="inline-flex items-center gap-2.5 bg-gold text-black text-[14.5px] font-bold px-8.5 
           py-3.5 rounded-xs no-underline transition-all duration-250 hover:bg-gold-light hover:-translate-y-0.5"
         >
-          تماس: ۰۹۱۲۳۷۰۱۶۹۱
+          تماس: {PHONE_NUMBER}
         </a>
       </motion.div>
     </section>
