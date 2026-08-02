@@ -1,48 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Service, StaggerContainer, StaggerItem } from "@/app/types";
-
-const services: Service[] = [
-  {
-    title: "طراحی و نقشه‌کشی",
-    desc: "از ایده تا نقشه، با دقتی که می‌ماند. تهیه‌ی نقشه‌های معماری و سازه و اخذ مجوزهای لازم.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <path d="M6 34V12l14-8 14 8v22" stroke="#c9a227" strokeWidth="1.6" />
-        <path d="M14 34V20h12v14" stroke="#c9a227" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-  {
-    title: "اجرا و ساخت",
-    desc: "تعهد به کیفیت، در هر مرحله‌ی اجرا. مدیریت کامل پروژه با نظارت مستمر مهندس ناظر.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <path d="M4 34h32M8 34V16l8-6 8 6v18M24 34V22h8v12" stroke="#c9a227" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-  {
-    title: "بازسازی و نوسازی",
-    desc: "جانی تازه به فضاهای قدیمی، با حداقل اختلال در زمان‌بندی زندگی یا کسب‌وکار شما.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <path d="M20 4v10M20 34V24M8 20h24M12 12l16 16M28 12L12 28" stroke="#c9a227" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-  {
-    title: "طراحی داخلی",
-    desc: "سلیقه‌ای که در جزئیات دیده می‌شود؛ از چیدمان و متریال تا نورپردازی.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <rect x="6" y="8" width="28" height="24" stroke="#c9a227" strokeWidth="1.6" />
-        <path d="M6 24h28M16 32V24" stroke="#c9a227" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-];
+import { SERVICES } from "@/app/data/content";
+import type { StaggerContainer, StaggerItem } from "@/app/types";
 
 const container: StaggerContainer = {
   hidden: {},
@@ -76,7 +36,7 @@ export default function Services() {
         className="max-w-1100 mx-auto grid grid-cols-2 md:grid-cols-4 gap-px border border-line"
         style={{ backgroundColor: "var(--color-line)" }}
       >
-        {services.map((s) => (
+        {SERVICES.map((s) => (
           <motion.div
             key={s.title}
             variants={item}

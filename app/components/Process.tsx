@@ -1,30 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { ProcessStep } from "@/app/types";
-
-const steps: ProcessStep[] = [
-  {
-    num: "01",
-    title: "مشاوره و بازدید",
-    desc: "بازدید رایگان از محل و بررسی نیاز شما، بدون هیچ تعهدی.",
-  },
-  {
-    num: "02",
-    title: "برآورد و قرارداد",
-    desc: "اعلام شفاف هزینه و زمان‌بندی، پیش از شروع هرگونه کار اجرایی.",
-  },
-  {
-    num: "03",
-    title: "اجرا با گزارش‌دهی",
-    desc: "اجرای مرحله‌به‌مرحله همراه با گزارش منظم پیشرفت کار به شما.",
-  },
-  {
-    num: "04",
-    title: "تحویل و پشتیبانی",
-    desc: "تحویل نهایی با مستندات فنی و دوره‌ی گارانتی اجرا.",
-  },
-];
+import { PROCESS_STEPS } from "@/app/data/content";
 
 export default function Process() {
   return (
@@ -41,7 +18,7 @@ export default function Process() {
       </motion.div>
 
       <div className="max-w-190 mx-auto">
-        {steps.map((step, i) => (
+        {PROCESS_STEPS.map((step, i) => (
           <motion.div
             key={step.num}
             initial={{ opacity: 0, y: 28 }}

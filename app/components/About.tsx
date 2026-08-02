@@ -1,18 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Stat } from "@/app/types";
-
-const stats: Stat[] = [
-  { num: "10+", label: "سال تجربه‌ی اجرایی" },
-  { num: "4", label: "حوزه‌ی خدمات تخصصی" },
-  { num: "100%", label: "شفافیت در قرارداد" },
-  { num: "1", label: "تیم، از طرح تا تحویل" },
-];
+import { ABOUT_STATS } from "@/app/data/content";
 
 export default function About() {
   return (
-    <section id="about" className="py-35 px-[6%] bg-charcoal border-t border-line border-b">
+    <section id="about" className="py-35 px-[6%]">
       <motion.div
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +43,7 @@ export default function About() {
           }}
         >
           <div className="grid grid-cols-2 gap-[26px_20px]">
-            {stats.map((s) => (
+            {ABOUT_STATS.map((s) => (
               <div key={s.label}>
                 <div className="font-serif text-[56px] text-gold-light font-semibold">{s.num}</div>
                 <div className="text-xs text-muted mt-1 tracking-[.3px]">{s.label}</div>

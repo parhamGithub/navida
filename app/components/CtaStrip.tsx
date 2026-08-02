@@ -1,15 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const PHONE_NUMBER: string = "۰۹۱۲۳۷۰۱۶۹۱";
-const PHONE_HREF: string = "tel:+989123701691";
+import { PHONE_HREF, PHONE_NUMBER } from "@/app/data/content";
 
 export default function CtaStrip() {
   return (
-    <section id="contact" className="text-center py-30 px-[6%]"
+    <section id="contact" className="text-center py-30 px-[6%] bg-charcoal border-t border-line"
       style={{
-        background: "radial-gradient(circle at 50% 0%, rgba(201,162,39,0.10), transparent 60%)",
+        background:
+          "radial-gradient(circle at 50% 0%, rgba(201,162,39,0.10), transparent 60%), var(--color-charcoal)",
       }}
     >
       <motion.div

@@ -2,15 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import type { NavLink } from "@/app/types";
-
-const links: NavLink[] = [
-  { href: "#", label: "خانه" },
-  { href: "#about", label: "درباره ما" },
-  { href: "#services", label: "خدمات" },
-  { href: "#process", label: "روند کار" },
-  { href: "#projects", label: "پروژه‌ها" },
-];
+import { NAV_LINKS } from "@/app/data/content";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -51,7 +43,7 @@ export default function Header() {
       </a>
 
       <nav className="hidden md:flex items-center gap-9.5">
-        {links.map((link) => (
+        {NAV_LINKS.map((link) => (
           <a
             key={link.label}
             href={link.href}

@@ -1,19 +1,6 @@
 "use client";
 
-import type { ContactItem, NavLink } from "@/app/types";
-
-const quickLinks: NavLink[] = [
-  { href: "#about", label: "درباره ما" },
-  { href: "#services", label: "خدمات" },
-  { href: "#process", label: "روند کار" },
-];
-
-const contactItems: ContactItem[] = [
-  { label: "۰۹۱۲۳۷۰۱۶۹۱" },
-  { label: "تهران، خیابان قلعه مرغی، میدان گلچین، ساختمان امیران" },
-  { label: "navida-eng.ir", href: "#" },
-  { label: "@navida.eng", href: "#" },
-];
+import { FOOTER_CONTACT_ITEMS, FOOTER_QUICK_LINKS } from "@/app/data/content";
 
 const linkClassName =
   "block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light";
@@ -61,7 +48,7 @@ export default function Footer() {
           <h5 className="text-xs text-gold-dim tracking-[1px] mb-4 uppercase">
             دسترسی سریع
           </h5>
-          {quickLinks.map((link) => (
+          {FOOTER_QUICK_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -76,7 +63,7 @@ export default function Footer() {
           <h5 className="text-xs text-gold-dim tracking-[1px] mb-4 uppercase">
             تماس
           </h5>
-          {contactItems.map((item) =>
+          {FOOTER_CONTACT_ITEMS.map((item) =>
             item.href ? (
               <a
                 key={item.label}

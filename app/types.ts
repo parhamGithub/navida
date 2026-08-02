@@ -23,6 +23,14 @@ export interface ProcessStep {
   desc: string;
 }
 
+export interface Project {
+  image: string;
+  title: string;
+  category: string;
+  aspect: string;
+  num: string;
+}
+
 export interface ContactItem {
   label: string;
   href?: string;
