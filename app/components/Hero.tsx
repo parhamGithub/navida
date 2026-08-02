@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const skyline =
-  "M0 300 L0 210 L60 210 L60 150 L120 150 L120 300 M150 300 L150 120 L230 120 L230 300 M260 300 L260 180 L300 180 L300 90 L340 90 L340 300 M900 300 L900 140 L960 140 L960 300 M990 300 L990 60 L1010 60 L1010 30 L1030 30 L1030 60 L1050 60 L1050 300 M1080 300 L1080 190 L1160 190 L1160 300 M1300 300 L1300 100 L1360 100 L1360 200 L1420 200 L1420 300 M1450 300 L1450 220 L1600 220 L1600 300";
+  "M0 300 L0 210 L60 210 L60 150 L120 150 L120 300 M150 300 L150 120 L230 120 L230 300 M260 300 L260 180 L300 180 L300 90 L340 90 L340 300 M558 300 L682 300 L682 296 L664 292 L664 286 L648 280 L648 274 L634 270 L628 110 L652 96 L660 84 L654 76 L646 76 L646 68 L638 68 L638 60 L632 60 L632 54 L620 50 L608 54 L608 60 L602 60 L602 68 L594 68 L594 76 L586 76 L580 84 L588 96 L612 110 L606 270 L592 274 L592 280 L576 286 L576 292 L558 296 L558 300 Z M620 50 L620 8 M614 22 L626 22 M615 40 L625 40 M900 300 L900 140 L960 140 L960 300 M990 300 L990 60 L1010 60 L1010 30 L1030 30 L1030 60 L1050 60 L1050 300 M1080 300 L1080 190 L1160 190 L1160 300 M1300 300 L1300 100 L1360 100 L1360 200 L1420 200 L1420 300 M1450 300 L1450 220 L1600 220 L1600 300";
 
 export default function Hero() {
   return (
@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="relative z-10">
         <motion.svg
           viewBox="0 0 106 112"
-          className="w-[100px] h-[106px] mx-auto mb-[30px] overflow-visible"
+          className="w-25 h-26.5 mx-auto mb-7.5 overflow-visible"
           fill="none"
         >
           <motion.path
@@ -129,13 +129,16 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-[10px] bg-gold text-black text-[14.5px] font-bold px-[34px] py-[14px] rounded-[2px] no-underline transition-all duration-250 hover:bg-gold-light hover:-translate-y-0.5"
+            className="inline-flex items-center gap-[10px] bg-gold text-black text-[14.5px] font-bold px-[34px] 
+            py-[14px] rounded-[2px] no-underline transition-all duration-250 hover:bg-gold-light hover:-translate-y-0.5"
           >
             درخواست مشاوره رایگان
           </a>
           <a
             href="#services"
-            className="inline-flex items-center gap-[10px] border border-cream/25 text-cream text-[14.5px] font-semibold px-[34px] py-[14px] rounded-[2px] no-underline tracking-[.3px] transition-all duration-250 hover:border-gold-light hover:text-gold-light hover:-translate-y-0.5"
+            className="inline-flex items-center gap-[10px] border border-cream/25 text-cream text-[14.5px] 
+            font-semibold px-[34px] py-[14px] rounded-[2px] no-underline tracking-[.3px] transition-all duration-250 
+            hover:border-gold-light hover:text-gold-light hover:-translate-y-0.5"
           >
             مشاهده‌ی خدمات
           </a>
@@ -147,7 +150,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.1 }}
         className="absolute bottom-9 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center 
-          gap-[10px]"
+          gap-2.5"
       >
         <span className="font-serif italic text-[11px] tracking-[3px] text-muted">
           SCROLL
