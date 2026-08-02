@@ -10,9 +10,9 @@ export default function Loader() {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black"
+        className="fixed inset-0 z-999 flex flex-col items-center justify-center bg-black"
       >
-        <svg viewBox="0 0 106 112" className="w-[120px] h-[127px]">
+        <svg viewBox="0 0 106 112" className="w-30 h-31.75">
           <motion.path
             d="M14 102 L14 34 L23 10 L32 34 L32 102"
             fill="none"
@@ -59,7 +59,7 @@ export default function Loader() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.9 }}
-          className="mt-[22px] text-[26px] font-bold tracking-[1px]"
+          className="mt-5.5 text-[26px] font-bold tracking-[1px]"
           style={{ color: "var(--color-gold-light)" }}
         >
           نویدا
