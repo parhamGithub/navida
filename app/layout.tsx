@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Vazirmatn } from "next/font/google";
 import "./globals.css";
+import ArchitectureBackground from "./components/ArchitectureBackground";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -31,7 +32,9 @@ export default function RootLayout({
       dir="rtl"
       className={`${vazirmatn.variable} ${cormorant.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ArchitectureBackground/>
+        {children}</body>
     </html>
   );
 }

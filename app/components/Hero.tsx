@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { EASE, SKYLINE } from "@/app/data/content";
+import { EASE } from "@/app/data/content";
 
 export default function Hero() {
   return (
@@ -35,15 +35,6 @@ export default function Hero() {
             "radial-gradient(circle, rgba(201,162,39,0.10), transparent 70%)",
         }}
       />
-
-      <svg
-        className="absolute bottom-0 left-0 right-0 w-full h-auto z-0 opacity-30 text-gold-dim"
-        viewBox="0 0 1600 300"
-        preserveAspectRatio="none"
-        fill="none"
-      >
-        <path d={SKYLINE} stroke="currentColor" strokeWidth="1" opacity="0.5" />
-      </svg>
 
       <div className="relative z-10">
         <motion.svg
