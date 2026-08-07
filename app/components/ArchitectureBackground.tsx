@@ -19,12 +19,12 @@ const ArchitectureBackground = memo(function ArchitectureBackground() {
       {/* Architectural grid */}
       <div
         className="
-          absolute -inset-[10%]
+          absolute inset-[-10%]
           opacity-[0.12]
-          [background-image:linear-gradient(rgba(212,175,55,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.13)_1px,transparent_1px)]
-          [background-size:100px_100px]
-          [transform:perspective(900px)_rotateX(55deg)_scale(1.5)]
-          [transform-origin:center_bottom]
+          bg-[linear-gradient(rgba(212,175,55,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.13)_1px,transparent_1px)]
+          bg-size-[100px_100px]
+          transform-[perspective(900px)_rotateX(55deg)_scale(1.5)]
+          transform-origin-[center_bottom]
         "
       />
 
@@ -37,13 +37,13 @@ const ArchitectureBackground = memo(function ArchitectureBackground() {
           left-1/2
           top-1/2
           h-auto
-          w-[700px]
+          w-175
           max-w-none
           -translate-x-1/2
           -translate-y-1/2
           opacity-[0.18]
-          sm:w-[700px]
-          max-sm:w-[500px]
+          sm:w-175
+          max-sm:w-125
         "
       >
         {/* Outer building */}
@@ -108,11 +108,11 @@ const ArchitectureBackground = memo(function ArchitectureBackground() {
       <div
         className="
           absolute
-          -left-[250px]
+          -left-62.5
           top-0
           h-full
-          w-[180px]
-          -skew-x-[15deg]
+          w-45
+          skew-x-[-15deg]
           bg-[linear-gradient(90deg,transparent,rgba(212,175,55,0.025),rgba(255,220,120,0.08),rgba(212,175,55,0.025),transparent)]
           architecture-light
         "
