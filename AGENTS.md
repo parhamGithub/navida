@@ -46,7 +46,18 @@ Tailwind v4 resolves **bare values** (plain numbers/fractions, no square bracket
 
 Keep `[...]` only when no bare value exists — e.g. percentages (`px-[6%]`, `w-[80vw]`, `top-[34%]`), font sizes (`text-[clamp(40px,8vw,96px)]`, `text-[15.5px]`), letter-spacing (`tracking-[4px]`), multi-value gaps (`gap-[26px_20px]`), unitless line-heights (`leading-[2.05]`), gradients/bg-size, arbitrary shadows, and colors not in the palette. Do **not** write bare values with units like `w-200px` or `tracking-4px` — those don't compile.
 
-Colors: prefer `@theme inline` tokens (`gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`). Never hardcode `bg-[#050505]`; if a color is missing, add a `--color-*` token to `app/globals.css` and use the token class.
+### Every color comes from the theme — never hardcode hex/rgba
+
+The project is theme-driven: all colors live as `--color-*` tokens in `@theme inline { ... }` in `app/globals.css`. **Never** hardcode a hex (`#c9a227`) or `rgba(...)` literal in JSX, inline styles, or SVG attributes. Always reference tokens, so retheming the whole site is a one-file change in `globals.css` and adding new themes never requires touching components.
+
+- **ClassNames:** use token utilities — `text-gold-light`, `bg-panel`, `border-line-strong`. Use the `/alpha` opacity modifier instead of hand-rolling rgba: `bg-gold/10` (not `bg-[#c9a227]/10`), `text-black/60`.
+- **Inline `style={{ ... }}` and inline SVG `stroke`/`fill`** (things Tailwind classes can't target): use the CSS variable directly — `style={{ color: "var(--color-muted)" }}`, `stroke="var(--color-gold)"`. Never `stroke="#c9a227"`.
+- **Gradients:** build from tokens — Tailwind class form `bg-linear-to-t from-gold to-ivory`, or inline `linear-gradient(var(--color-gold), transparent)`. For alpha inside a gradient, use `color-mix(in oklab, var(--color-gold) 20%, transparent)`.
+- **Arbitrary colors:** no need for `bg-[#050505]`-style arbitrary color values when a token exists. If a color genuinely isn't themed yet, **add a `--color-*` token to `app/globals.css`** and use the token class/variable — don't inline a raw value in markup.
+
+Palette (from `globals.css`): `gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`.
+
+Note: `@theme inline` bakes token values into generated utilities at build time, which is fine for a single fixed palette. If you later want runtime-switchable themes, tokens will need the standard `@theme` (non-inline) treatment — but because components only reference token classes/vars, no component code changes.
 
 ## Other
 
