@@ -34,6 +34,20 @@ Single-page Persian (Farsi) marketing site for an architecture/engineering firm.
 - Brand palette lives in `app/globals.css` (`@theme inline`): `gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`. Use these token classes (e.g. `text-gold-light`, `bg-panel`) instead of hardcoding hex values.
 - Fonts load via `next/font/google` in `app/layout.tsx`: Vazirmatn (sans, `--font-vazirmatn`) and Cormorant Garamond (serif, `--font-cormorant`), exposed as Tailwind's `font-sans` / `font-serif`.
 
+### Use bare values, not `[...]` arbitrary values
+
+Tailwind v4 resolves **bare values** (plain numbers/fractions, no square brackets) for many utilities. The Tailwind IntelliSense lint rule `suggestCanonicalClasses` (default `warning`) flags bracket forms when a bare value would do — that's the yellow squiggle you see. Always use the bare/canonical form:
+
+- **Spacing-based utilities** accept any number on the `0.25rem` scale (spacing `4px` per unit): `w-50` (not `w-[200px]`), `py-15`, `mt-6.5`, `max-w-175`, `h-150`, `gap-11`. Convert pixels to the scale: `px / 4` (e.g. `w-[200px]` → `w-50`).
+- **Aspect ratio** accepts bare fractions: `aspect-278/258`, `aspect-3/4`, `aspect-4/5` (not `aspect-[278/258]`, `aspect-[3/4]`).
+- **Opacity** accepts an integer percent: `opacity-28` (not `opacity-[0.28]` or `opacity-[.28]`).
+- **Transition duration** accepts a ms integer: `duration-400` (not `duration-[400ms]`).
+- **z-index** accepts a bare number: `z-40` (not `z-[40]`).
+
+Keep `[...]` only when no bare value exists — e.g. percentages (`px-[6%]`, `w-[80vw]`, `top-[34%]`), font sizes (`text-[clamp(40px,8vw,96px)]`, `text-[15.5px]`), letter-spacing (`tracking-[4px]`), multi-value gaps (`gap-[26px_20px]`), unitless line-heights (`leading-[2.05]`), gradients/bg-size, arbitrary shadows, and colors not in the palette. Do **not** write bare values with units like `w-200px` or `tracking-4px` — those don't compile.
+
+Colors: prefer `@theme inline` tokens (`gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`). Never hardcode `bg-[#050505]`; if a color is missing, add a `--color-*` token to `app/globals.css` and use the token class.
+
 ## Other
 
 **ESLint:** Flat config (`eslint.config.mjs`). Uses `eslint-config-next/core-web-vitals` + `eslint-config-next/typescript`.

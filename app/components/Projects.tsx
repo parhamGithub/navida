@@ -25,16 +25,7 @@ export default function Projects() {
   const watermarkY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <section id="projects" className="relative py-35 px-[6%] overflow-hidden bg-charcoal border-t border-line border-b">
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-56 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 75% 100% at 50% 0%, rgba(201,162,39,0.10), transparent 70%)",
-        }}
-      />
-
+    <section id="projects" className="relative py-35 px-[6%]">
       <motion.span
         style={{ y: watermarkY }}
         aria-hidden

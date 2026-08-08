@@ -5,10 +5,10 @@ import { PHONE_HREF, PHONE_NUMBER } from "@/app/data/content";
 
 export default function CtaStrip() {
   return (
-    <section id="contact" className="text-center py-30 px-[6%] bg-charcoal border-t border-line"
+    <section id="contact" className="text-center py-30 px-[6%]"
       style={{
         background:
-          "radial-gradient(circle at 50% 0%, rgba(201,162,39,0.10), transparent 60%), var(--color-charcoal)",
+          "radial-gradient(circle at 50% 0%, rgba(201,162,39,0.10), transparent 60%)",
       }}
     >
       <motion.div

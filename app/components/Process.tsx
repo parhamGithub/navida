@@ -5,7 +5,7 @@ import { PROCESS_STEPS } from "@/app/data/content";
 
 export default function Process() {
   return (
-    <section id="process" className="py-35 px-[6%] bg-charcoal border-t border-line border-b">
+    <section id="process" className="py-35 px-[6%]">
       <motion.div
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
