@@ -25,7 +25,7 @@ export default function Loader() {
             filter: "drop-shadow(0 0 26px rgba(232,200,102,0.28))",
           }}
         >
-          <Logo className="w-[clamp(130px,19vw,200px)] aspect-[278/258] select-none" />
+          <Logo className="w-[clamp(130px,19vw,200px)] aspect-278/258 select-none" />
 
           <motion.div
             aria-hidden

@@ -15,7 +15,7 @@ export default function Footer() {
             href="#"
             className="flex items-center gap-3 no-underline mb-3.5"
           >
-            <Logo className="w-7 aspect-[278/258]" />
+            <Logo className="w-7 aspect-278/258" />
             <span className="text-[19px] font-bold text-ivory">نویدا</span>
           </a>
           <p className="text-[13px] text-muted leading-[1.9] max-w-75">
