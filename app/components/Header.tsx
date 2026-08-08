@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { NAV_LINKS } from "@/app/data/content";
+import Logo from "@/app/components/Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -26,14 +27,15 @@ export default function Header() {
       style={{ direction: "rtl" }}
     >
       <a href="#" className="flex items-center gap-3 no-underline">
-        <svg viewBox="0 0 106 112" className="w-8.5 h-9 shrink-0">
-          <path d="M14 102 L14 34 L23 10 L32 34 L32 102" stroke="var(--color-gold-light)" strokeWidth="4" 
-          strokeLinejoin="round" fill="none" />
-          <path d="M32 40 L92 102 M32 52 L92 90" stroke="var(--color-gold-light)" strokeWidth="4" strokeLinejoin="round" 
-          fill="none" />
-          <path d="M74 102 L74 20 L92 20 L92 102" stroke="var(--color-gold-light)" strokeWidth="4" strokeLinejoin="round" 
-          fill="none" />
-        </svg>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.82, y: -10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
+          whileHover={{ scale: 1.06 }}
+          className="shrink-0"
+        >
+          <Logo breathe className="h-9 aspect-278/258 select-none" />
+        </motion.div>
         <div className="flex flex-col leading-none">
           <span className="text-[19px] font-bold tracking-[.5px] text-ivory">نویدا</span>
           <span className="font-serif italic text-[9.5px] tracking-[3px] text-gold-light uppercase mt-1">

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import type { CubicBezier } from "@/app/types";
+import Logo from "@/app/components/Logo";
 
 const EASE: CubicBezier = [0.65, 0, 0.35, 1];
 
@@ -15,53 +16,34 @@ export default function Loader() {
         transition={{ duration: 1, ease: "easeInOut" }}
         className="fixed inset-0 z-999 flex flex-col items-center justify-center bg-black"
       >
-        <svg viewBox="0 0 106 112" className="w-30 h-31.75">
-          <motion.path
-            d="M14 102 L14 34 L23 10 L32 34 L32 102"
-            fill="none"
-            stroke="var(--color-gold-light)"
-            strokeWidth="2.2"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: EASE }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, clipPath: "inset(0 100% 0 0)" }}
+          animate={{ opacity: 1, scale: 1, clipPath: "inset(0 0% 0 0)" }}
+          transition={{ duration: 1.7, ease: EASE }}
+          className="relative overflow-hidden"
+          style={{
+            filter: "drop-shadow(0 0 26px rgba(232,200,102,0.28))",
+          }}
+        >
+          <Logo className="w-[clamp(130px,19vw,200px)] aspect-[278/258] select-none" />
+
+          <motion.div
+            aria-hidden
+            initial={{ x: "-130%" }}
+            animate={{ x: "230%" }}
+            transition={{ duration: 1.15, ease: "easeInOut", delay: 1 }}
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(100deg, transparent 0%, rgba(232,200,102,0.14) 46%, rgba(232,200,102,0.3) 50%, rgba(232,200,102,0.14) 54%, transparent 100%)",
+            }}
           />
-          <motion.path
-            d="M32 40 L92 102 M32 52 L92 90"
-            fill="none"
-            stroke="var(--color-gold)"
-            strokeWidth="2.2"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: EASE, delay: 0.25 }}
-          />
-          <motion.path
-            d="M32 40 L34 26 L37 40"
-            fill="none"
-            stroke="var(--color-gold)"
-            strokeWidth="2.2"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: EASE, delay: 0.25 }}
-          />
-          <motion.path
-            d="M74 102 L74 20 L92 20 L92 102"
-            fill="none"
-            stroke="var(--color-gold-light)"
-            strokeWidth="2.2"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: EASE, delay: 0.55 }}
-          />
-        </svg>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.9 }}
+          transition={{ duration: 0.9, delay: 1.7 }}
           className="mt-5.5 text-[26px] font-bold tracking-[1px]"
           style={{ color: "var(--color-gold-light)" }}
         >
@@ -71,7 +53,7 @@ export default function Loader() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 2.1 }}
+          transition={{ duration: 0.9, delay: 1.9 }}
           className="text-xs tracking-[8px] uppercase mt-1.5"
           style={{ color: "var(--color-muted)" }}
         >

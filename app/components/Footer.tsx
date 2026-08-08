@@ -1,6 +1,7 @@
 "use client";
 
 import { FOOTER_CONTACT_ITEMS, FOOTER_QUICK_LINKS } from "@/app/data/content";
+import Logo from "@/app/components/Logo";
 
 const linkClassName =
   "block text-[13.5px] text-[#c9c2ac] no-underline mb-2.5 hover:text-gold-light";
@@ -14,29 +15,7 @@ export default function Footer() {
             href="#"
             className="flex items-center gap-3 no-underline mb-3.5"
           >
-            <svg viewBox="0 0 106 112" width="26" height="28">
-              <path
-                d="M14 102 L14 34 L23 10 L32 34 L32 102"
-                fill="none"
-                stroke="#e8c866"
-                strokeWidth="4"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M32 40 L92 102 M32 52 L92 90"
-                fill="none"
-                stroke="#e8c866"
-                strokeWidth="4"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M74 102 L74 20 L92 20 L92 102"
-                fill="none"
-                stroke="#e8c866"
-                strokeWidth="4"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Logo className="w-7 aspect-[278/258]" />
             <span className="text-[19px] font-bold text-ivory">نویدا</span>
           </a>
           <p className="text-[13px] text-muted leading-[1.9] max-w-75">

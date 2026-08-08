@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { EASE } from "@/app/data/content";
+import Logo from "@/app/components/Logo";
 
 export default function Hero() {
   return (
@@ -37,50 +37,7 @@ export default function Hero() {
       />
 
       <div className="relative z-10">
-        <motion.svg
-          viewBox="0 0 106 112"
-          className="w-25 h-26.5 mx-auto mb-7.5 overflow-visible"
-          fill="none"
-        >
-          <motion.path
-            d="M14 102 L14 34 L23 10 L32 34 L32 102"
-            stroke="var(--color-gold-light)"
-            strokeWidth="3.4"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.1, ease: EASE }}
-          />
-          <motion.path
-            d="M32 40 L92 102 M32 52 L92 90"
-            stroke="var(--color-gold)"
-            strokeWidth="3.4"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2.1,
-              ease: EASE,
-              delay: 0.25,
-            }}
-          />
-          <motion.path
-            d="M74 102 L74 20 L92 20 L92 102"
-            stroke="var(--color-gold-light)"
-            strokeWidth="3.4"
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2.1,
-              ease: EASE,
-              delay: 0.55,
-            }}
-          />
-        </motion.svg>
+        <Logo reveal className="w-40 aspect-278/258 mx-auto mb-7.5 md:w-44 max-w-[80vw]" />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
