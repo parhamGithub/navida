@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-black: #0a0a0b;
+  --color-black: #050505;
   --color-charcoal: #141416;
   --color-panel: #18181b;
   --color-gold: #c9a227;
@@ -24,7 +24,7 @@ body {
 
 ::selection {
   background: var(--color-gold);
-  color: #0a0a0b;
+  color: var(--color-black);
 }
 
 @keyframes architecture-draw {
