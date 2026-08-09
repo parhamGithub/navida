@@ -18,7 +18,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#about", label: "درباره ما" },
   { href: "#services", label: "خدمات" },
   { href: "#process", label: "روند کار" },
-  { href: "#projects", label: "پروژه‌ها" },
+  { href: "/projects", label: "پروژه‌ها" },
 ];
 
 export const ABOUT_STATS: Stat[] = [
