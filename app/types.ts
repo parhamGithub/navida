@@ -24,7 +24,7 @@ export interface ProcessStep {
 }
 
 export interface Project {
-  image: string;
+  images: { image: string; alt: string; aspect: string }[];
   title: string;
   category: string;
   aspect: string;

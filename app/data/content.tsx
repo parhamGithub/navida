@@ -44,7 +44,11 @@ export const SERVICES: Service[] = [
     desc: "تعهد به کیفیت، در هر مرحله‌ی اجرا. مدیریت کامل پروژه با نظارت مستمر مهندس ناظر.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <path d="M4 34h32M8 34V16l8-6 8 6v18M24 34V22h8v12" stroke="#c9a227" strokeWidth="1.6" />
+        <path
+          d="M4 34h32M8 34V16l8-6 8 6v18M24 34V22h8v12"
+          stroke="#c9a227"
+          strokeWidth="1.6"
+        />
       </svg>
     ),
   },
@@ -53,7 +57,11 @@ export const SERVICES: Service[] = [
     desc: "جانی تازه به فضاهای قدیمی، با حداقل اختلال در زمان‌بندی زندگی یا کسب‌وکار شما.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <path d="M20 4v10M20 34V24M8 20h24M12 12l16 16M28 12L12 28" stroke="#c9a227" strokeWidth="1.6" />
+        <path
+          d="M20 4v10M20 34V24M8 20h24M12 12l16 16M28 12L12 28"
+          stroke="#c9a227"
+          strokeWidth="1.6"
+        />
       </svg>
     ),
   },
@@ -62,7 +70,14 @@ export const SERVICES: Service[] = [
     desc: "سلیقه‌ای که در جزئیات دیده می‌شود؛ از چیدمان و متریال تا نورپردازی.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9.5 h-9.5 mb-5">
-        <rect x="6" y="8" width="28" height="24" stroke="#c9a227" strokeWidth="1.6" />
+        <rect
+          x="6"
+          y="8"
+          width="28"
+          height="24"
+          stroke="#c9a227"
+          strokeWidth="1.6"
+        />
         <path d="M6 24h28M16 32V24" stroke="#c9a227" strokeWidth="1.6" />
       </svg>
     ),
@@ -94,70 +109,140 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const PROJECTS: Project[] = [
   {
-    image: "/projects/IMG_5462.webp",
+    images: [
+      {
+        image: "/projects/IMG_5462.webp",
+        alt: "ویلای پلکانی کردان",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        image: "/projects/IMG_2716.webp",
+        alt: "ویلای پلکانی کردان",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        image: "/projects/IMG_2262.webp",
+        alt: "ویلای پلکانی کردان",
+        aspect: "aspect-[3/4]",
+      },
+    ],
     title: "ویلای پلکانی کردان",
     category: "معماری و اجرا",
     aspect: "aspect-[3/4]",
     num: "01",
   },
   {
-    image: "/projects/IMG_4275.webp",
+    images: [
+      {
+        image: "/projects/IMG_4275.webp",
+        alt: "مجتمع مسکونی گلچین",
+        aspect: "aspect-[16/10] md:col-span-2",
+      },
+    ],
     title: "مجتمع مسکونی گلچین",
     category: "اجرا و ساخت",
     aspect: "aspect-[16/10] md:col-span-2",
     num: "02",
   },
   {
-    image: "/projects/IMG_2716.webp",
+    images: [
+      {
+        image: "/projects/IMG_2716.webp",
+        alt: "بازسازی دفتر مرکزی",
+        aspect: "aspect-[3/4]",
+      },
+    ],
     title: "بازسازی دفتر مرکزی",
     category: "بازسازی و نوسازی",
     aspect: "aspect-[3/4]",
     num: "03",
   },
   {
-    image: "/projects/IMG_2262.webp",
+    images: [
+      {
+        image: "/projects/IMG_2262.webp",
+        alt: "کافه‌رستوران باغ",
+        aspect: "aspect-[4/5]",
+      },
+    ],
     title: "کافه‌رستوران باغ",
     category: "طراحی داخلی",
     aspect: "aspect-[4/5]",
     num: "04",
   },
   {
-    image: "/projects/IMG_1953.webp",
+    images: [
+      {
+        image: "/projects/IMG_1953.webp",
+        alt: "ویلای مدرن لواسان",
+        aspect: "aspect-[4/5]",
+      },
+    ],
     title: "ویلای مدرن لواسان",
     category: "معماری و اجرا",
     aspect: "aspect-[4/5]",
     num: "05",
   },
   {
-    image: "/projects/IMG_1834.webp",
+    images: [
+      {
+        image: "/projects/IMG_1834.webp",
+        alt: "نوسازی خانه‌ی قدیمی",
+        aspect: "aspect-[16/10] md:col-span-2",
+      },
+    ],
     title: "نوسازی خانه‌ی قدیمی",
     category: "بازسازی و نوسازی",
     aspect: "aspect-[16/10] md:col-span-2",
     num: "06",
   },
   {
-    image: "/projects/IMG_1792.webp",
+    images: [
+      {
+        image: "/projects/IMG_1792.webp",
+        alt: "ساختمان اداری ونک",
+        aspect: "aspect-[3/4]",
+      },
+    ],
     title: "ساختمان اداری ونک",
     category: "اجرا و ساخت",
     aspect: "aspect-[3/4]",
     num: "07",
   },
   {
-    image: "/projects/IMG_1746.webp",
+    images: [
+      {
+        image: "/projects/IMG_1746.webp",
+        alt: "پنت‌هاوس میرداماد",
+        aspect: "aspect-[4/5]",
+      },
+    ],
     title: "پنت‌هاوس میرداماد",
     category: "طراحی داخلی",
     aspect: "aspect-[4/5]",
     num: "08",
   },
   {
-    image: "/projects/IMG_1144.webp",
+    images: [
+      {
+        image: "/projects/IMG_1144.webp",
+        alt: "رستوران سنتی بازار",
+        aspect: "aspect-[4/5]",
+      },
+    ],
     title: "رستوران سنتی بازار",
     category: "بازسازی و نوسازی",
     aspect: "aspect-[4/5]",
     num: "09",
   },
   {
-    image: "/projects/IMG_1142.webp",
+    images: [
+      {
+        image: "/projects/IMG_1142.webp",
+        alt: "خانه‌ی حیاط‌دار",
+        aspect: "aspect-[3/4]",
+      },
+    ],
     title: "خانه‌ی حیاط‌دار",
     category: "معماری و اجرا",
     aspect: "aspect-[3/4]",

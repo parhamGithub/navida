@@ -1,10 +1,12 @@
-import React from "react";
+import ProjectCard from "../components/projects/projectCard";
+import { PROJECTS } from "../data/content";
 
 export default function ProjectsPage() {
   return (
-    <main style={{ padding: "2rem", fontFamily: "system-ui, sans-serif" }}>
-      <h1>Projects</h1>
-      <p>Welcome to the projects page. Add your project list here.</p>
+    <main className="pb-5 px-5 lg:px-1">
+      {PROJECTS.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
     </main>
   );
 }
