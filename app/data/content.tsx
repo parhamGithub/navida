@@ -14,7 +14,7 @@ export const PHONE_NUMBER: string = "۰۹۱۲۳۷۰۱۶۹۱";
 export const PHONE_HREF: string = "tel:+989123701691";
 
 export const NAV_LINKS: NavLink[] = [
-  { href: "#", label: "خانه" },
+  { href: "/", label: "خانه" },
   { href: "#about", label: "درباره ما" },
   { href: "#services", label: "خدمات" },
   { href: "#process", label: "روند کار" },

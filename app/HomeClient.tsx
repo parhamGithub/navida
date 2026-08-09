@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Loader from "@/app/components/Loader";
-import Header from "@/app/components/Header";
 import Hero from "@/app/components/Hero";
 import About from "@/app/components/About";
 import Services from "@/app/components/Services";
@@ -26,7 +25,6 @@ export default function HomeClient() {
   return (
     <>
       <AnimatePresence>{!show && <Loader key="loader" />}</AnimatePresence>
-      <Header />
       <Hero />
       <Projects />
       <About />
