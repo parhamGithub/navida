@@ -20,9 +20,10 @@ export default function Header() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-[6vw] transition-all duration-400
-        ${scrolled
-          ? "bg-black/60 backdrop-blur-[22px] saturate-[1.7] py-3.5 border-b border-line-strong shadow-[0_8px_34px_rgba(0,0,0,0.4)]"
-          : "bg-charcoal/40 backdrop-blur-[18px] saturate-[1.5] py-5.5 border-b border-line shadow-[0_4px_30px_rgba(0,0,0,0.18)]"
+        ${
+          scrolled
+? "bg-black/60 backdrop-blur-[22px] backdrop-saturate-[1.7] py-3.5 border-b border-line-strong shadow-[0_8px_34px_rgba(0,0,0,0.4)]"
+          : "bg-charcoal/40 backdrop-blur-[18px] backdrop-saturate-[1.5] py-5.5 border-b border-line shadow-[0_4px_30px_rgba(0,0,0,0.18)]"
         }`}
       style={{ direction: "rtl" }}
     >
@@ -34,10 +35,12 @@ export default function Header() {
           whileHover={{ scale: 1.06 }}
           className="shrink-0"
         >
-          <Logo breathe className="h-9 aspect-278/258 select-none" />
+          <Logo breathe className="select-none text-[#D7A11D] w-10" />
         </motion.div>
         <div className="flex flex-col leading-none">
-          <span className="text-[19px] font-bold tracking-[.5px] text-ivory">نویدا</span>
+          <span className="text-[19px] font-bold tracking-[.5px] text-ivory">
+            نویدا
+          </span>
           <span className="font-serif italic text-[9.5px] tracking-[3px] text-gold-light uppercase mt-1">
             ARCHITECTURE · ENGINEERING
           </span>

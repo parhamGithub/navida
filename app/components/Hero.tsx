@@ -6,8 +6,10 @@ import ArchitectureBackground from "@/app/components/ArchitectureBackground";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-[6%] pt-40 
-    pb-27.5 overflow-hidden">
+    <section
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-[6%] pt-40 
+    pb-27.5 overflow-hidden"
+    >
       <ArchitectureBackground />
       <div
         className="absolute inset-0 opacity-[.28] z-0"
@@ -39,7 +41,10 @@ export default function Hero() {
       />
 
       <div className="relative z-10">
-        <Logo reveal className="w-40 aspect-278/258 mx-auto mb-7.5 md:w-44 max-w-[80vw]" />
+        <Logo
+          reveal
+          className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-[#D7A11D]"
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

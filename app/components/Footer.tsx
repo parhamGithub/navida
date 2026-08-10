@@ -11,11 +11,8 @@ export default function Footer() {
     <footer className="border-t border-line mt-10 px-[6%] py-15 bg-black">
       <div className="max-w-275 mx-auto grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
         <div>
-          <a
-            href="#"
-            className="flex items-center gap-3 no-underline mb-3.5"
-          >
-            <Logo className="w-7 aspect-278/258" />
+          <a href="#" className="flex items-center gap-3 no-underline mb-3.5">
+            <Logo className="w-7 text-[#D7A11D]" />
             <span className="text-[19px] font-bold text-ivory">نویدا</span>
           </a>
           <p className="text-[13px] text-muted leading-[1.9] max-w-75">
@@ -28,11 +25,7 @@ export default function Footer() {
             دسترسی سریع
           </h5>
           {FOOTER_QUICK_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={linkClassName}
-            >
+            <a key={link.href} href={link.href} className={linkClassName}>
               {link.label}
             </a>
           ))}
@@ -44,18 +37,14 @@ export default function Footer() {
           </h5>
           {FOOTER_CONTACT_ITEMS.map((item) =>
             item.href ? (
-              <a
-                key={item.label}
-                href={item.href}
-                className={linkClassName}
-              >
+              <a key={item.label} href={item.href} className={linkClassName}>
                 {item.label}
               </a>
             ) : (
               <p key={item.label} className={linkClassName}>
                 {item.label}
               </p>
-            )
+            ),
           )}
         </div>
       </div>
