@@ -7,8 +7,8 @@ import ArchitectureBackground from "@/app/components/ArchitectureBackground";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-[6%] pt-40 
-    pb-27.5 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-[6%] pt-30 
+      pb-27.5 overflow-hidden"
     >
       <ArchitectureBackground />
       <div
