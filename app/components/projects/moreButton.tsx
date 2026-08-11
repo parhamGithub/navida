@@ -1,46 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { EASE } from "@/app/data/content";
 
 export default function MoreButton() {
   return (
-    <motion.button
-      className="flex flex-col cursor-pointer items-center"
+    <motion.a
+      href="#contact"
+      className="group inline-flex items-center gap-4 no-underline"
       initial="rest"
       animate="rest"
       whileHover="hover"
     >
-      <p className="text-gold font-semibold text-xl">بیشتر</p>
+      <span className="text-[15.5px] font-bold text-gold-light">بیشتر</span>
+      <span className="relative h-px w-18 overflow-hidden bg-gold-dim">
+        <motion.span
+          className="absolute inset-0 origin-right bg-gold-light"
+          variants={{
+            rest: { scaleX: 0 },
+            hover: { scaleX: 1 },
+          }}
+          transition={{ duration: 0.45, ease: EASE }}
+        />
+      </span>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="55 0 350 80"
-        width="300"
-        height="30"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="h-4 w-4 -translate-x-1.5 text-gold-light opacity-0 transition-all duration-500 
+        group-hover:translate-x-0 group-hover:opacity-100"
       >
         <path
-          d="M 370 70.72 L 90 70.72 L 110 65"
+          d="M19 12H5M11 6l-6 6 6 6"
           stroke="currentColor"
-          stroke-width="2"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <motion.path
-          d="M 370 70.72 L 90 70.72 L 110 65"
-          stroke="var(--color-gold)"
-          stroke-width="3"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          pathLength={1}
-          strokeDasharray="1"
-          variants={{
-            rest: { strokeDashoffset: 1 },
-            hover: { strokeDashoffset: 0 },
-          }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
-    </motion.button>
+    </motion.a>
   );
 }
