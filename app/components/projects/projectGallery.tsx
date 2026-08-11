@@ -31,7 +31,7 @@ function RollingColumn({
       type="button"
       onClick={onAdvance}
       aria-label="تصویر بعدی"
-      className="group relative block w-full cursor-pointer overflow-hidden bg-panel border border-line aspect-3/4"
+      className="group relative block h-full w-full cursor-pointer overflow-hidden bg-panel border border-line"
     >
       <AnimatePresence initial={false} mode="popLayout">
         <motion.div
@@ -46,7 +46,7 @@ function RollingColumn({
             src={img.image}
             alt={img.alt || title}
             fill
-            sizes="(max-width: 768px) 30vw, 25vw"
+            sizes="(max-width: 768px) 30vw, 40vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </motion.div>
@@ -66,8 +66,8 @@ export default function ProjectGallery({
   const prev = () => setPage((p) => (p - 1 + count) % count);
 
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-3 gap-4">
+    <div className="flex h-full w-full flex-col">
+      <div className="grid h-full grid-cols-3 gap-4">
         {[0, 1, 2].map((col) => (
           <RollingColumn
             key={col}
@@ -78,7 +78,7 @@ export default function ProjectGallery({
         ))}
       </div>
 
-      <div className="mt-7 flex items-center justify-between">
+      <div className="mt-6 flex shrink-0 items-center justify-between">
         <div className="flex items-center gap-4">
           <span className="font-serif italic text-[11px] tracking-[3px] text-gold-light uppercase">
             Switch Photos

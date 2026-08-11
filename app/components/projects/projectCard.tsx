@@ -11,28 +11,26 @@ export default function ProjectCard({ project }: { project: Project }) {
   const { images, title, category, num } = project;
 
   return (
-    <section className="relative px-[6%] py-20 lg:py-28 border-t border-line overflow-hidden">
-      <div className="mx-auto max-w-230">
+    <section className="relative border-t border-line overflow-hidden">
+      <div className="mx-auto grid grid-cols-1 items-center gap-10 lg:h-[85vh] lg:grid-cols-[1fr_3fr] px-[6%] py-16 lg:py-0">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="mb-12 flex flex-wrap items-end justify-between gap-6"
+          className="order-2 flex flex-col lg:order-1"
         >
-          <div>
-            <div className="mb-3 font-serif text-[22px] font-semibold text-gold-dim">
-              {num}.
-            </div>
-            <h2 className="text-[clamp(30px,4vw,46px)] font-bold leading-[1.18] text-ivory">
-              {title}
-            </h2>
-            <div className="mt-3 font-serif italic text-[12px] tracking-[3px] text-gold-light uppercase">
-              {category}
-            </div>
+          <div className="mb-3 font-serif text-[22px] font-semibold text-gold-dim">
+            {num}.
+          </div>
+          <h2 className="text-[clamp(30px,4vw,46px)] font-bold leading-[1.18] text-ivory">
+            {title}
+          </h2>
+          <div className="mt-3 font-serif italic text-[12px] tracking-[3px] text-gold-light uppercase">
+            {category}
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="mt-10 flex flex-col items-start gap-6">
             <MoreButton />
             <Link
               href="/"
@@ -53,7 +51,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        <ProjectGallery images={images} title={title} />
+        <div className="order-1 lg:order-2 h-[65vh] lg:h-full">
+          <ProjectGallery images={images} title={title} />
+        </div>
       </div>
     </section>
   );
