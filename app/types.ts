@@ -23,12 +23,20 @@ export interface ProcessStep {
   desc: string;
 }
 
+export interface Image {
+  image: string;
+  alt: string;
+  aspect: string;
+}
+
 export interface Project {
-  images: { image: string; alt: string; aspect: string }[];
+  mainImage: Image;
+  images: Image[];
   title: string;
   category: string;
-  aspect: string;
+  aspect?: string;
   num: string;
+  description: string;
 }
 
 export interface ContactItem {

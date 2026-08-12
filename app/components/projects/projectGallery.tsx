@@ -15,6 +15,7 @@ type GalleryImage = { image: string; alt: string };
 type ProjectGalleryProps = {
   images: GalleryImage[];
   title: string;
+  showMain: boolean;
 };
 
 function RollingColumn({
@@ -58,6 +59,7 @@ function RollingColumn({
 export default function ProjectGallery({
   images,
   title,
+  showMain,
 }: ProjectGalleryProps) {
   const count = images.length;
   const [page, setPage] = useState<number>(0);
@@ -69,12 +71,23 @@ export default function ProjectGallery({
     <div className="flex h-full w-full flex-col">
       <div className="grid h-full grid-cols-3 gap-4">
         {[0, 1, 2].map((col) => (
-          <RollingColumn
+          <motion.div
             key={col}
-            img={images[(col + page) % count]}
-            title={title}
-            onAdvance={next}
-          />
+            initial={false}
+            animate={{ opacity: showMain ? 0 : 1 }}
+            transition={{
+              duration: showMain ? 0.5 : 0.45,
+              ease: EASE,
+              delay: showMain ? (2 - col) * 0.14 : col * 0.3,
+            }}
+            className="h-full min-h-0"
+          >
+            <RollingColumn
+              img={images[(col + page) % count]}
+              title={title}
+              onAdvance={next}
+            />
+          </motion.div>
         ))}
       </div>
 

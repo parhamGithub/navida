@@ -28,9 +28,9 @@ export default function ProjectsHeader() {
         <h1 className="text-[clamp(34px,5vw,52px)] font-bold text-ivory mt-3">
           نمونه‌کارهای نویدا
         </h1>
-        <p className="text-[14px] text-muted leading-[2] mt-4 max-w-130 mx-auto">
-          گزیده‌ای از پروژه‌هایی که با تعهد و پیگیری، از نقشه تا کلید به
-          سرانجام رسیده‌اند؛ هر یک داستانی از یک وعده‌ی تحقق‌یافته.
+        <p className="text-[14px] text-muted leading-loose mt-4 max-w-130 mx-auto">
+          گزیده‌ای از پروژه‌هایی که با تعهد و پیگیری، از نقشه تا کلید به سرانجام
+          رسیده‌اند؛ هر یک داستانی از یک وعده‌ی تحقق‌یافته.
         </p>
       </motion.div>
     </section>

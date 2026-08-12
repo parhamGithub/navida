@@ -3,16 +3,23 @@
 import { motion } from "framer-motion";
 import { EASE } from "@/app/data/content";
 
-export default function MoreButton() {
+export default function MoreButton({
+  onClick,
+  label = "بیشتر",
+}: {
+  onClick?: () => void;
+  label?: string;
+}) {
   return (
-    <motion.a
-      href="#contact"
-      className="group inline-flex items-center gap-4 no-underline"
+    <motion.button
+      type="button"
+      onClick={onClick}
+      className="group inline-flex cursor-pointer items-center gap-4 bg-transparent p-0 no-underline"
       initial="rest"
       animate="rest"
       whileHover="hover"
     >
-      <span className="text-[15.5px] font-bold text-gold-light">بیشتر</span>
+      <span className="text-[15.5px] font-bold text-gold-light">{label}</span>
       <span className="relative h-px w-18 overflow-hidden bg-gold-dim">
         <motion.span
           className="absolute inset-0 origin-right bg-gold-light"
@@ -37,6 +44,6 @@ export default function MoreButton() {
           strokeLinejoin="round"
         />
       </svg>
-    </motion.a>
+    </motion.button>
   );
 }

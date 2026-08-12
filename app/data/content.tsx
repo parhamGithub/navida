@@ -109,6 +109,11 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const PROJECTS: Project[] = [
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_5462.webp",
@@ -130,8 +135,15 @@ export const PROJECTS: Project[] = [
     category: "معماری و اجرا",
     aspect: "aspect-[3/4]",
     num: "01",
+    description:
+      "یک ویلای مدرن با طراحی پلکانی که با طبیعت اطراف خود هماهنگ است.",
   },
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_4275.webp",
@@ -143,8 +155,15 @@ export const PROJECTS: Project[] = [
     category: "اجرا و ساخت",
     aspect: "aspect-[16/10] md:col-span-2",
     num: "02",
+    description:
+      "یک مجتمع مسکونی با طراحی مدرن و امکانات رفاهی کامل، واقع در قلب شهر.",
   },
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_2716.webp",
@@ -156,8 +175,15 @@ export const PROJECTS: Project[] = [
     category: "بازسازی و نوسازی",
     aspect: "aspect-[3/4]",
     num: "03",
+    description:
+      "بازسازی دفتر مرکزی یک شرکت با تمرکز بر بهبود بهره‌وری و زیبایی محیط کار.",
   },
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_2262.webp",
@@ -169,8 +195,15 @@ export const PROJECTS: Project[] = [
     category: "طراحی داخلی",
     aspect: "aspect-[4/5]",
     num: "04",
+    description:
+      "طراحی داخلی کافه‌رستوران باغ با تمرکز بر ایجاد فضایی دلنشین و دعوت‌کننده برای مشتریان.",
   },
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_1953.webp",
@@ -182,8 +215,15 @@ export const PROJECTS: Project[] = [
     category: "معماری و اجرا",
     aspect: "aspect-[4/5]",
     num: "05",
+    description:
+      "یک ویلای مدرن در لواسان با طراحی مینیمال و استفاده از متریال‌های با کیفیت برای ایجاد فضایی لوکس و راحت.",
   },
   {
+    mainImage: {
+      image: "/projects/IMG_4275.webp",
+      alt: "مجتمع مسکونی گلچین",
+      aspect: "aspect-[16/10] md:col-span-2",
+    },
     images: [
       {
         image: "/projects/IMG_1834.webp",
@@ -195,58 +235,8 @@ export const PROJECTS: Project[] = [
     category: "بازسازی و نوسازی",
     aspect: "aspect-[16/10] md:col-span-2",
     num: "06",
-  },
-  {
-    images: [
-      {
-        image: "/projects/IMG_1792.webp",
-        alt: "ساختمان اداری ونک",
-        aspect: "aspect-[3/4]",
-      },
-    ],
-    title: "ساختمان اداری ونک",
-    category: "اجرا و ساخت",
-    aspect: "aspect-[3/4]",
-    num: "07",
-  },
-  {
-    images: [
-      {
-        image: "/projects/IMG_1746.webp",
-        alt: "پنت‌هاوس میرداماد",
-        aspect: "aspect-[4/5]",
-      },
-    ],
-    title: "پنت‌هاوس میرداماد",
-    category: "طراحی داخلی",
-    aspect: "aspect-[4/5]",
-    num: "08",
-  },
-  {
-    images: [
-      {
-        image: "/projects/IMG_1144.webp",
-        alt: "رستوران سنتی بازار",
-        aspect: "aspect-[4/5]",
-      },
-    ],
-    title: "رستوران سنتی بازار",
-    category: "بازسازی و نوسازی",
-    aspect: "aspect-[4/5]",
-    num: "09",
-  },
-  {
-    images: [
-      {
-        image: "/projects/IMG_1142.webp",
-        alt: "خانه‌ی حیاط‌دار",
-        aspect: "aspect-[3/4]",
-      },
-    ],
-    title: "خانه‌ی حیاط‌دار",
-    category: "معماری و اجرا",
-    aspect: "aspect-[3/4]",
-    num: "10",
+    description:
+      "بازسازی یک خانه‌ی قدیمی با هدف حفظ ارزش‌های تاریخی و ارتقاء کیفیت زندگی ساکنان.",
   },
 ];
 
