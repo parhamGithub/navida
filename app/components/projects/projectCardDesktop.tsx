@@ -8,7 +8,7 @@ import MoreButton from "./moreButton";
 import type { Project } from "../../types";
 import { EASE } from "@/app/data/content";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCardDesktop({ project }: { project: Project }) {
   const { images, mainImage, title, category, num, description } = project;
   const [showMain, setShowMain] = useState(false);
 

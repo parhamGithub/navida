@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Vazirmatn } from "next/font/google";
+import { Cormorant_Garamond, Vazirmatn, Geist } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -30,7 +33,7 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
-      className={`${vazirmatn.variable} ${cormorant.variable}`}
+      className={cn(vazirmatn.variable, cormorant.variable, "font-sans", geist.variable)}
     >
       <body>
         <Header />
