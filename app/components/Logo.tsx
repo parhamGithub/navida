@@ -1,5 +1,4 @@
-﻿import Image from "next/image";
-import type { CSSProperties } from "react";
+﻿import type { CSSProperties } from "react";
 
 type LogoProps = {
   className?: string;
