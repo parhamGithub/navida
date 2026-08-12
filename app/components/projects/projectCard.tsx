@@ -14,18 +14,18 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <section className="relative border-t pt-10 border-line overflow-hidden">
-      <div className="mx-auto grid grid-cols-1 items-start gap-10 lg:h-[85vh] lg:grid-cols-[1fr_3fr] lg:items-center px-[6%] py-16 lg:py-0">
+      <div className="mx-auto grid grid-cols-1 items-center gap-10 lg:h-[85vh] lg:grid-cols-[1fr_3fr] px-[6%] py-16 lg:py-0">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="z-30 col-start-1 row-start-1 flex flex-col bg-linear-to-b from-black/65 to-transparent p-6 lg:z-auto lg:h-full lg:bg-none lg:p-0"
+          className="order-2 flex h-full flex-col lg:order-1"
         >
           <motion.div
             layout
             transition={{ duration: 0.7, ease: EASE }}
-            className={`flex flex-col justify-start lg:flex-1 ${showMain ? "lg:justify-start" : "lg:justify-center"}`}
+            className={`flex flex-1 flex-col ${showMain ? "justify-start" : "justify-center"}`}
           >
             <motion.div
               layout
@@ -52,7 +52,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.5, ease: EASE, delay: 0.15 }}
-                  className="mt-4 max-w-105 text-[14.5px] leading-[2.05] text-ivory/90 lg:text-muted"
+                  className="mt-4 max-w-105 text-[14.5px] leading-[2.05] text-muted"
                 >
                   {description}
                 </motion.p>
@@ -71,16 +71,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             </AnimatePresence>
           </motion.div>
 
-<motion.div
-              layout
-              transition={{ duration: 0.7, ease: EASE }}
-              className={`shrink-0 lg:hidden ${showMain ? "h-24" : "h-0"}`}
-            />
-
             <motion.div
               layout
               transition={{ duration: 0.7, ease: EASE }}
-              className="mt-10 shrink-0 lg:mt-0"
+              className="flex shrink-0"
             >
               <MoreButton
                 onClick={() => setShowMain((v) => !v)}
@@ -88,10 +82,10 @@ export default function ProjectCard({ project }: { project: Project }) {
               />
             </motion.div>
 
-          <div className="hidden flex-1 lg:block" />
+          <div className="flex-1" />
         </motion.div>
 
-        <div className="relative col-start-1 row-start-1 h-[65vh] lg:col-start-2 lg:h-full overflow-hidden">
+        <div className="relative order-1 lg:order-2 h-[65vh] lg:h-full overflow-hidden">
           <ProjectGallery images={images} title={title} showMain={showMain} />
           <AnimatePresence>
             {showMain && (

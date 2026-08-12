@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { EASE } from "@/app/data/content";
 
 export default function MoreButton({
@@ -19,7 +19,18 @@ export default function MoreButton({
       animate="rest"
       whileHover="hover"
     >
-      <span className="text-[15.5px] font-bold text-gold-light">{label}</span>
+      <AnimatePresence initial={false} mode="wait">
+        <motion.span
+          key={label}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.35, ease: EASE }}
+          className="text-[15.5px] font-bold text-gold-light"
+        >
+          {label}
+        </motion.span>
+      </AnimatePresence>
       <span className="relative h-px w-18 overflow-hidden bg-gold-dim">
         <motion.span
           className="absolute inset-0 origin-right bg-gold-light"
