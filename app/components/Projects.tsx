@@ -64,28 +64,39 @@ export default function Projects() {
         transition={{ duration: 0.9 }}
         className="max-w-170 mx-auto mb-16 text-center relative"
       >
-        <div className="font-serif italic text-gold-dim tracking-[4px] text-xs uppercase">Selected Works</div>
-        <h2 className="text-[clamp(30px,4vw,44px)] font-bold text-ivory mt-3">نمونه‌کارهای نویدا</h2>
+        <div className="font-serif italic text-gold-dim tracking-[4px] text-xs uppercase">
+          Selected Works
+        </div>
+        <h2 className="text-[clamp(30px,4vw,44px)] font-bold text-ivory mt-3">
+          نمونه‌کارهای نویدا
+        </h2>
         <p className="text-[13.8px] text-muted leading-[1.9] mt-4.5 max-w-130 mx-auto">
-          گزیده‌ای از پروژه‌هایی که با تعهد و پیگیری، از نقشه تا کلید به سرانجام رسیده‌اند.
+          گزیده‌ای از پروژه‌هایی که با تعهد و پیگیری، از نقشه تا کلید به سرانجام
+          رسیده‌اند.
         </p>
       </motion.div>
 
       <div ref={sectionRef} className="max-w-230 mx-auto relative">
         {PROJECTS.map((p) => (
-          <div key={p.num} className="flex flex-col items-center gap-6 lg:gap-8">
+          <div
+            key={p.num}
+            className="flex flex-col items-center gap-6 lg:gap-8"
+          >
             <RevealImage project={p} />
 
             <div className="text-center max-w-130">
-              <div className="flex items-center justify-center gap-3 font-serif italic text-[12px] tracking-[3px] text-gold-light uppercase">
+              <div
+                className="flex items-center justify-center gap-3 font-serif italic text-[12px] tracking-[3px] 
+                  text-gold-light uppercase"
+              >
                 <span className="text-gold-dim">{p.num}</span>
                 <span className="h-px w-8 bg-line-strong" aria-hidden />
                 <span>{p.category}</span>
               </div>
-              <h3 className="mt-3 text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.25] text-ivory">
+              <h3 className="mt-3 text-[clamp(24px,2.6vw,34px)] font-bold leading-tight text-ivory">
                 {p.title}
               </h3>
-              <p className="mt-3 text-[14px] text-muted leading-[2]">
+              <p className="mt-3 text-[14px] text-muted leading-loose">
                 {p.description}
               </p>
               <a
@@ -95,7 +106,13 @@ export default function Projects() {
               >
                 مشاهده پروژه
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-                  <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M19 12H5M11 6l-6 6 6 6"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -118,7 +135,13 @@ export default function Projects() {
         >
           درخواست نمونه‌کارهای بیشتر
           <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-            <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M19 12H5M11 6l-6 6 6 6"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </a>
       </motion.div>

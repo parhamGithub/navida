@@ -38,12 +38,12 @@ export default function Header() {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
-          className="fixed top-0 bottom-0 right-0 z-[60] w-full md:hidden flex flex-col
+          className="fixed top-0 bottom-0 right-0 z-60 w-full md:hidden flex flex-col
               bg-black/40 backdrop-blur-[22px] backdrop-saturate-[1.7] border-l border-line-strong shadow-[-18px_0_50px_rgba(0,0,0,0.55)]"
         >
           <div className="flex items-center justify-between px-6.5 pt-6 pb-5 border-b border-line">
             <div className="flex items-center gap-3">
-              <Logo breathe className="select-none text-[#D7A11D] w-8.5" />
+              <Logo breathe className="select-none text-gold w-8.5" />
               <div className="flex flex-col leading-none">
                 <span className="text-[17px] font-bold tracking-[.5px] text-ivory">
                   نویدا
@@ -134,7 +134,7 @@ export default function Header() {
             whileHover={{ scale: 1.06 }}
             className="shrink-0"
           >
-            <Logo breathe className="select-none text-[#D7A11D] w-10" />
+            <Logo breathe className="select-none text-gold w-10" />
           </motion.div>
           <div className="flex flex-col leading-none">
             <span className="text-[19px] font-bold tracking-[.5px] text-ivory">

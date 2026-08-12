@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-275 mx-auto grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
         <div>
           <a href="#" className="flex items-center gap-3 no-underline mb-3.5">
-            <Logo className="w-7 text-[#D7A11D]" />
+            <Logo className="w-7 text-gold" />
             <span className="text-[19px] font-bold text-ivory">نویدا</span>
           </a>
           <p className="text-[13px] text-muted leading-[1.9] max-w-75">

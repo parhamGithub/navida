@@ -9,7 +9,6 @@ import Services from "@/app/components/Services";
 import Process from "@/app/components/Process";
 import Projects from "@/app/components/Projects";
 import CtaStrip from "@/app/components/CtaStrip";
-import Footer from "@/app/components/Footer";
 
 export default function HomeClient() {
   const [show, setShow] = useState<boolean>(false);
@@ -31,7 +30,6 @@ export default function HomeClient() {
       <Process />
       <Services />
       <CtaStrip />
-      <Footer />
     </>
   );
 }

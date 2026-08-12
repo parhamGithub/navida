@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
+import * as React from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -10,27 +10,27 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel"
-import type { Project } from "../../types"
-import { EASE } from "@/app/data/content"
+} from "@/components/ui/carousel";
+import type { Project } from "../../types";
+import { EASE } from "@/app/data/content";
 
 const toFa = (n: number): string =>
   String(n)
     .padStart(2, "0")
-    .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)])
+    .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
 
 export default function ProjectCardMobile({ project }: { project: Project }) {
-  const { images, title, category, num, description } = project
+  const { images, title, category, num, description } = project;
 
-  const allImages = images.length ? images : []
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState<number>(0)
-  const [openIndex, setOpenIndex] = React.useState<number | null>(null)
+  const allImages = images.length ? images : [];
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState<number>(0);
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   React.useEffect(() => {
-    if (!api) return
-    api.on("select", () => setCurrent(api.selectedScrollSnap()))
-  }, [api])
+    if (!api) return;
+    api.on("select", () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
 
   return (
     <section className="relative border-t border-line">
@@ -64,9 +64,7 @@ export default function ProjectCardMobile({ project }: { project: Project }) {
                         ? `پنهان کردن توضیحات ${title}`
                         : `نمایش توضیحات ${title}`
                     }
-                    onClick={() =>
-                      setOpenIndex((v) => (v === i ? null : i))
-                    }
+                    onClick={() => setOpenIndex((v) => (v === i ? null : i))}
                     className="relative block aspect-3/4 w-full cursor-pointer overflow-hidden border border-line bg-panel text-start"
                   >
                     <Image
@@ -91,7 +89,7 @@ export default function ProjectCardMobile({ project }: { project: Project }) {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: 10, opacity: 0 }}
                             transition={{ duration: 0.45, ease: EASE }}
-                            className="text-[13.5px] leading-[2] text-ivory"
+                            className="text-[13.5px] leading-loose text-ivory"
                           >
                             {description}
                           </motion.p>
@@ -103,8 +101,14 @@ export default function ProjectCardMobile({ project }: { project: Project }) {
               ))}
             </CarouselContent>
             <div className="mt-4 flex items-center justify-center gap-2">
-              <CarouselPrevious className="static inset-y-auto start-auto my-0 border-line-strong bg-panel text-gold-light hover:bg-gold hover:text-black" />
-              <CarouselNext className="static inset-y-auto end-auto my-0 border-line-strong bg-panel text-gold-light hover:bg-gold hover:text-black" />
+              <CarouselPrevious
+                className="static inset-y-auto inset-s-auto my-0 border-line-strong bg-panel 
+              text-gold-light hover:bg-gold hover:text-black"
+              />
+              <CarouselNext
+                className="static inset-y-auto inset-e-auto my-0 border-line-strong bg-panel 
+              text-gold-light hover:bg-gold hover:text-black"
+              />
             </div>
           </Carousel>
 
@@ -139,5 +143,5 @@ export default function ProjectCardMobile({ project }: { project: Project }) {
         <p className="text-[14px] leading-[2.05] text-muted">{description}</p>
       </div>
     </section>
-  )
+  );
 }

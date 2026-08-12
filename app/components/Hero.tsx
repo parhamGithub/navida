@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="relative z-10">
         <Logo
           reveal
-          className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-[#D7A11D]"
+          className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-gold"
         />
 
         <motion.div
