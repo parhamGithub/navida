@@ -3,18 +3,40 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { EASE, PROJECTS } from "@/app/data/content";
-import type { StaggerContainer, StaggerItem } from "@/app/types";
+import { PROJECTS } from "@/app/data/content";
+import type { Project } from "@/app/types";
 
-const container: StaggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.09 } },
-};
+function ratioOf(aspect: string): string {
+  const m = /aspect-\[(\d+)\s*\/\s*(\d+)\]/.exec(aspect);
+  if (!m) return "1 / 1";
+  return `${m[1]} / ${m[2]}`;
+}
 
-const item: StaggerItem = {
-  hidden: { opacity: 0, y: 44 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: EASE } },
-};
+function RevealImage({ project }: { project: Project }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"],
+  });
+  const width = useTransform(scrollYProgress, [0, 1], ["14%", "100%"]);
+
+  return (
+    <div ref={ref} className="reveal-container">
+      <motion.div
+        className="reveal-mask h-[68vh] max-h-175 border border-line bg-panel"
+        style={{ aspectRatio: ratioOf(project.mainImage.aspect), width }}
+      >
+        <Image
+          src={project.mainImage.image}
+          alt={project.mainImage.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 60vw"
+          className="object-cover"
+        />
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -49,65 +71,37 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      <motion.div
-        ref={sectionRef}
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        className="max-w-230 mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 relative"
-      >
+      <div ref={sectionRef} className="max-w-230 mx-auto relative">
         {PROJECTS.map((p) => (
-          <motion.a
-            key={p.num}
-            variants={item}
-            href="#contact"
-            className={`group relative block overflow-hidden border border-line bg-panel no-underline ${p.aspect}`}
-          >
-            <motion.div
-              whileHover={{ scale: 1.07 }}
-              transition={{ duration: 0.9, ease: EASE }}
-              className="absolute inset-0 overflow-hidden grayscale-35 transition-[filter] duration-700 
-              group-hover:grayscale-0"
-            >
-              <Image
-                src={p.images[0].image}
-                alt={p.images[0].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent" />
-              <div className="absolute inset-0 bg-gold/0 transition-colors duration-500 group-hover:bg-gold/[0.14]" />
-              <div
-                className="absolute inset-3 border border-gold/0 transition-colors duration-500 group-hover:border-gold/45"
-                aria-hidden
-              />
-            </motion.div>
+          <div key={p.num} className="flex flex-col items-center gap-6 lg:gap-8">
+            <RevealImage project={p} />
 
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 pt-20">
-              <div className="translate-y-1.5 transition-transform duration-500 group-hover:translate-y-0">
-                <div className="font-serif italic text-gold-light text-[11px] tracking-[2px] uppercase mb-1.5">
-                  {p.category}
-                </div>
-                <h3 className="text-[17.5px] font-bold text-ivory">{p.title}</h3>
+            <div className="text-center max-w-130">
+              <div className="flex items-center justify-center gap-3 font-serif italic text-[12px] tracking-[3px] text-gold-light uppercase">
+                <span className="text-gold-dim">{p.num}</span>
+                <span className="h-px w-8 bg-line-strong" aria-hidden />
+                <span>{p.category}</span>
               </div>
-
-              <div className="flex items-center gap-3 text-gold-light shrink-0">
-                <span className="font-serif text-[15px] opacity-80">{p.num}</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="w-4.5 h-4.5 translate-x-1.5 opacity-0 transition-all duration-500 
-                  group-hover:translate-x-0 group-hover:opacity-100"
-                >
+              <h3 className="mt-3 text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.25] text-ivory">
+                {p.title}
+              </h3>
+              <p className="mt-3 text-[14px] text-muted leading-[2]">
+                {p.description}
+              </p>
+              <a
+                href="/projects"
+                className="mt-5 inline-flex items-center gap-2.5 text-[14px] font-medium text-gold-light no-underline 
+                transition-colors duration-300 hover:text-gold"
+              >
+                مشاهده پروژه
+                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
                   <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </div>
+              </a>
             </div>
-          </motion.a>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}

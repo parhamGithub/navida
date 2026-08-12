@@ -64,6 +64,28 @@ body {
   overflow-x: hidden;
 }
 
+.reveal-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: 4rem;
+}
+
+.reveal-mask {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+}
+
+.reveal-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 ::selection {
   background: var(--color-gold);
   color: var(--color-black);
