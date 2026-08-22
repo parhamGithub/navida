@@ -1,16 +1,19 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 # navida
 
-**Stack:** Next.js 16.2.12 / React 19.2.4 / Tailwind CSS v4 / TypeScript (strict) / ESLint v9 (flat config). Only runtime dep besides React/Next is `framer-motion`.
+**Stack:** Next.js 16.2.12 / React 19.2.4 / Tailwind CSS v4 / TypeScript (strict) / ESLint v9 (flat config). UI dependencies include Base UI, shadcn, Embla Carousel, Framer Motion, and Lucide React.
 
 **Package manager:** `npm` (lockfile committed).
 
 **Commands:**
+
 - `npm run dev` — dev server at localhost:3000 (runs `next dev --webpack`; Turbopack has a React Client Manifest bug in 16.2.12)
 - `npm run build` — production build (also runs typecheck via Next.js)
 - `npm run start` — serve the production build (requires `npm run build` first)
@@ -20,18 +23,24 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## What this app is
 
-Single-page Persian (Farsi) marketing site for an architecture/engineering firm. All user-facing copy is RTL Persian (`lang="fa"`, `dir="rtl"` in `app/layout.tsx`) with a few English accent labels (e.g. "ARCHITECTURE · ENGINEERING"). Keep existing Persian copy intact and write new copy in Persian unless told otherwise.
+Persian (Farsi) marketing site for an architecture/engineering firm, with a home page and a separate projects route. All user-facing copy is RTL Persian (`lang="fa"`, `dir="rtl"` in `app/layout.tsx`) with a few intentional English accent labels. Keep existing Persian copy intact and write new copy in Persian unless told otherwise.
 
 **Structure:**
-- `app/page.tsx` (server component) renders `app/HomeClient.tsx` (client), which stacks sections in order: Loader, Header, Hero, About, Services, Process, CtaStrip, Footer.
-- Every component in `app/components/` is a client component (`"use client"`, uses `framer-motion`). No server data, API routes, or env vars.
-- Sections are anchored by `id` (`#about`, `#services`, `#process`, `#contact`). To add a section: create it in `app/components/`, import and place it in `HomeClient.tsx`, and add its nav link in `Header.tsx`.
+
+- `app/page.tsx` is the server entry for the home page and renders `app/HomeClient.tsx` (client), which orders `Loader`, `Hero`, `Projects`, `About`, `Process`, `Services`, and `CtaStrip`.
+- `app/layout.tsx` owns global metadata, RTL attributes, fonts, and the layout-level `Header` and `Footer`; do not render duplicate header/footer components in `HomeClient.tsx`.
+- `app/projects/page.tsx` is a separate client route. It uses `useMediaQuery` to select desktop/mobile project presentations from `app/components/projects/`.
+- Shared navigation and content collections live in `app/data/content.tsx`; shared TypeScript contracts live in `app/types.ts`. Project images are local assets under `public/projects/` and should be rendered with `next/image`.
+- Most files under `app/components/` are client components using `framer-motion`; there is no server data layer, API route, or environment-variable contract.
+- Home sections are anchored by `id` (`#about`, `#services`, `#process`, `#contact`). To add a section: create it in `app/components/`, import and place it in `HomeClient.tsx`, and add its navigation link in `app/data/content.tsx` (consumed by `Header.tsx`).
+
+`README.md` is still the default create-next-app document and is not an authoritative description of this application.
 
 ## Tailwind v4 quirks
 
 - Use `@import "tailwindcss"` in CSS, **not** `@tailwind base/components/utilities`.
 - Theme tokens defined with `@theme inline { ... }` in CSS, not `tailwind.config.*`.
-- Brand palette lives in `app/globals.css` (`@theme inline`): `gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`. Use these token classes (e.g. `text-gold-light`, `bg-panel`) instead of hardcoding hex values.
+- Brand palette lives in `app/globals.css` (`@theme inline`): `gold`, `gold-light`, `gold-dim`, `ivory`, `cream`, `muted`, `charcoal`, `panel`, `black`, `line`, `line-strong`. Use these token classes (e.g. `text-gold-light`, `bg-panel`) instead of hardcoding hex values. New code should follow this even where existing code has legacy raw colors.
 - Fonts load via `next/font/google` in `app/layout.tsx`: Vazirmatn (sans, `--font-vazirmatn`) and Cormorant Garamond (serif, `--font-cormorant`), exposed as Tailwind's `font-sans` / `font-serif`.
 
 ### Use bare values, not `[...]` arbitrary values
@@ -66,3 +75,5 @@ Note: `@theme inline` bakes token values into generated utilities at build time,
 **Path alias:** `@/*` maps to project root (e.g. `import { x } from "@/app/..."`).
 
 **Generated files (gitignored):** `.next/`, `next-env.d.ts`, `*.tsbuildinfo`.
+
+**Validation:** Run `npm run lint` for linting and `npm run build` for the production build plus TypeScript validation. There is no test framework or dedicated typecheck script. Keep `next dev` on the Webpack script in `package.json`; this Next.js version has a known Turbopack client-manifest issue in this project.
