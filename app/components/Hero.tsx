@@ -55,15 +55,15 @@ export default function Hero() {
 
         <HeroReveal delay={0.45} duration={1.1}>
           <h1 className="text-[clamp(40px,8vw,96px)] font-bold leading-[1.15] max-w-230 text-ivory">
-            هر بنا، <span className="text-gold-light">نویدِ</span> روزی بهتر است
+            هر بنا، <span className="text-gold">نویدِ</span> حس امن بودن
           </h1>
         </HeroReveal>
 
         <HeroReveal delay={0.65}>
           <p className="max-w-155 mx-auto mt-6.5 text-[16.5px] leading-8 text-muted">
-            گروه فنی و مهندسی نویدا؛ از طراحی و نقشه‌کشی تا اجرا، بازسازی و طراحی
-            داخلی — همه در یک مجموعه‌ی یکپارچه، با یک استاندارد کیفی، تا کلید
-            تحویل پروژه.
+            گروه فنی و مهندسی نویدا؛ از طراحی و نقشه‌کشی تا اجرا، بازسازی و
+            طراحی داخلی — همه در یک مجموعه‌ی یکپارچه، با یک استاندارد کیفی، تا
+            کلید تحویل پروژه.
           </p>
         </HeroReveal>
 
