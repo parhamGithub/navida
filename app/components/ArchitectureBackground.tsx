@@ -1,8 +1,4 @@
-"use client";
-
-import { memo } from "react";
-
-const ArchitectureBackground = memo(function ArchitectureBackground() {
+export default function ArchitectureBackground() {
   return (
     <div
       aria-hidden="true"
@@ -119,6 +115,4 @@ const ArchitectureBackground = memo(function ArchitectureBackground() {
       />
     </div>
   );
-});
-
-export default ArchitectureBackground;
+}

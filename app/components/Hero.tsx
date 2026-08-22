@@ -1,8 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Logo from "@/app/components/Logo";
 import ArchitectureBackground from "@/app/components/ArchitectureBackground";
+import HeroReveal from "@/app/components/HeroReveal";
+import HeroScrollIndicator from "@/app/components/HeroScrollIndicator";
 
 export default function Hero() {
   return (
@@ -46,39 +45,30 @@ export default function Hero() {
           className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-gold"
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+        <HeroReveal
+          delay={0.3}
+          duration={0.8}
           className="font-serif italic text-xs tracking-[5px] text-gold-dim uppercase mb-6"
         >
           Navida — Engineering &amp; Architecture Group
-        </motion.div>
+        </HeroReveal>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, delay: 0.45 }}
-          className="text-[clamp(40px,8vw,96px)] font-bold leading-[1.15] max-w-230 text-ivory"
-        >
-          هر بنا، <span className="text-gold-light">نویدِ</span> روزی بهتر است
-        </motion.h1>
+        <HeroReveal delay={0.45} duration={1.1}>
+          <h1 className="text-[clamp(40px,8vw,96px)] font-bold leading-[1.15] max-w-230 text-ivory">
+            هر بنا، <span className="text-gold-light">نویدِ</span> روزی بهتر است
+          </h1>
+        </HeroReveal>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.65 }}
-          className="max-w-155 mx-auto mt-6.5 text-[16.5px] leading-8 text-muted"
-        >
-          گروه فنی و مهندسی نویدا؛ از طراحی و نقشه‌کشی تا اجرا، بازسازی و طراحی
-          داخلی — همه در یک مجموعه‌ی یکپارچه، با یک استاندارد کیفی، تا کلید
-          تحویل پروژه.
-        </motion.p>
+        <HeroReveal delay={0.65}>
+          <p className="max-w-155 mx-auto mt-6.5 text-[16.5px] leading-8 text-muted">
+            گروه فنی و مهندسی نویدا؛ از طراحی و نقشه‌کشی تا اجرا، بازسازی و طراحی
+            داخلی — همه در یک مجموعه‌ی یکپارچه، با یک استاندارد کیفی، تا کلید
+            تحویل پروژه.
+          </p>
+        </HeroReveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.85 }}
+        <HeroReveal
+          delay={0.85}
           className="flex gap-4 mt-10 justify-center max-sm:flex-col max-sm:w-full max-sm:max-w-75 max-sm:mx-auto"
         >
           <a
@@ -96,32 +86,10 @@ export default function Hero() {
           >
             مشاهده‌ی خدمات
           </a>
-        </motion.div>
+        </HeroReveal>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.1 }}
-        className="absolute bottom-9 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center 
-          gap-2.5"
-      >
-        <span className="font-serif italic text-[11px] tracking-[3px] text-muted">
-          SCROLL
-        </span>
-        <div
-          className="w-px h-10 relative overflow-hidden"
-          style={{
-            background: "linear-gradient(var(--color-gold-light), transparent)",
-          }}
-        >
-          <motion.div
-            className="absolute w-full h-full bg-gold-light"
-            animate={{ top: ["-40px", "40px"] }}
-            transition={{ duration: 2.2, ease: "easeInOut", repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
+      <HeroScrollIndicator />
     </section>
   );
 }
