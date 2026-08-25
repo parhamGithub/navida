@@ -1,11 +1,3 @@
-<!-- BEGIN:nextjs-agent-rules -->
-
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-
-<!-- END:nextjs-agent-rules -->
-
 # navida
 
 **Stack:** Next.js 16.2.12 / React 19.2.4 / Tailwind CSS v4 / TypeScript (strict) / ESLint v9 (flat config). UI deps: Base UI, shadcn, Embla Carousel, Framer Motion, Lucide React.
@@ -45,7 +37,7 @@ Home anchors: `#about`, `#services`, `#process`, `#contact`.
 - Inline styles / SVG strokes: use CSS vars directly, e.g. `style={{ color: "var(--color-muted)" }}`, `stroke="var(--color-gold)"`. For alpha, use `bg-gold/10`, not `rgba(...)`.
 - **Bare values, not brackets**, wherever Tailwind v4 supports them:
   - Spacing: `w-50` (not `w-[200px]`), `py-15`, `mt-6.5`, `max-w-175`, `h-150`, `gap-11`. Rule: `px / 4`.
-  - Aspect ratio: `aspect-278/258`, `aspect-3/4` (not `aspect-[278/258]`).
+  - Aspect ratio: `aspect-278/258`, `aspect-3/4` (not `aspect-[278/258]` or `aspect-[3/4]`).
   - Opacity: `opacity-28` (not `opacity-[0.28]`).
   - Duration: `duration-400` (not `duration-[400ms]`).
   - z-index: `z-40` (not `z-[40]`).

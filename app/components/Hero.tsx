@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Logo from "@/app/components/Logo";
-import ArchitectureBackground from "@/app/components/ArchitectureBackground";
 import HeroReveal from "@/app/components/HeroReveal";
 import HeroScrollIndicator from "@/app/components/HeroScrollIndicator";
 
@@ -9,7 +9,14 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-[6%] pt-30 
       pb-27.5 overflow-hidden"
     >
-      <ArchitectureBackground />
+      <Image
+        src="/projects/Villa/garder_night.webp"
+        alt=""
+        fill
+        className="object-cover z-0 opacity-40"
+        priority
+      />
+
       <div
         className="absolute inset-0 opacity-[.28] z-0"
         style={{
@@ -39,7 +46,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-20">
         <Logo
           reveal
           className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-gold"
@@ -88,6 +95,8 @@ export default function Hero() {
           </a>
         </HeroReveal>
       </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-100 bg-linear-to-t from-black to-transparent z-10 pointer-events-none" />
 
       <HeroScrollIndicator />
     </section>
