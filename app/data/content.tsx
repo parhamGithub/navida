@@ -110,23 +110,38 @@ export const PROCESS_STEPS: ProcessStep[] = [
 export const PROJECTS: Project[] = [
   {
     mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
+      image: "/projects/Villa/villa_day.webp",
+      alt: "ویلای بابلسر",
       aspect: "aspect-[16/10] md:col-span-2",
     },
     images: [
       {
-        image: "/projects/IMG_5462.webp",
+        image: "/projects/Villa/gazebo_night.webp",
+        alt: "آلاچیق ویلای بابلسر",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        image: "/projects/Villa/garder_night.webp",
         alt: "ویلای پلکانی کردان",
         aspect: "aspect-[3/4]",
       },
       {
-        image: "/projects/IMG_2716.webp",
+        image: "/projects/Villa/gazebo_sunset.webp",
         alt: "ویلای پلکانی کردان",
         aspect: "aspect-[3/4]",
       },
       {
-        image: "/projects/IMG_2262.webp",
+        image: "/projects/Villa/villa_day.webp",
+        alt: "آلاچیق ویلای بابلسر",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        image: "/projects/Villa/garder_day.webp",
+        alt: "ویلای پلکانی کردان",
+        aspect: "aspect-[3/4]",
+      },
+      {
+        image: "/projects/Villa/gazebo_day.webp",
         alt: "ویلای پلکانی کردان",
         aspect: "aspect-[3/4]",
       },
@@ -138,106 +153,106 @@ export const PROJECTS: Project[] = [
     description:
       "یک ویلای مدرن با طراحی پلکانی که با طبیعت اطراف خود هماهنگ است.",
   },
-  {
-    mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
-      aspect: "aspect-[16/10] md:col-span-2",
-    },
-    images: [
-      {
-        image: "/projects/IMG_4275.webp",
-        alt: "مجتمع مسکونی گلچین",
-        aspect: "aspect-[16/10] md:col-span-2",
-      },
-    ],
-    title: "مجتمع مسکونی گلچین",
-    category: "اجرا و ساخت",
-    aspect: "aspect-[16/10] md:col-span-2",
-    num: "02",
-    description:
-      "یک مجتمع مسکونی با طراحی مدرن و امکانات رفاهی کامل، واقع در قلب شهر.",
-  },
-  {
-    mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
-      aspect: "aspect-[16/10] md:col-span-2",
-    },
-    images: [
-      {
-        image: "/projects/IMG_2716.webp",
-        alt: "بازسازی دفتر مرکزی",
-        aspect: "aspect-[3/4]",
-      },
-    ],
-    title: "بازسازی دفتر مرکزی",
-    category: "بازسازی و نوسازی",
-    aspect: "aspect-[3/4]",
-    num: "03",
-    description:
-      "بازسازی دفتر مرکزی یک شرکت با تمرکز بر بهبود بهره‌وری و زیبایی محیط کار.",
-  },
-  {
-    mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
-      aspect: "aspect-[16/10] md:col-span-2",
-    },
-    images: [
-      {
-        image: "/projects/IMG_2262.webp",
-        alt: "کافه‌رستوران باغ",
-        aspect: "aspect-[4/5]",
-      },
-    ],
-    title: "کافه‌رستوران باغ",
-    category: "طراحی داخلی",
-    aspect: "aspect-[4/5]",
-    num: "04",
-    description:
-      "طراحی داخلی کافه‌رستوران باغ با تمرکز بر ایجاد فضایی دلنشین و دعوت‌کننده برای مشتریان.",
-  },
-  {
-    mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
-      aspect: "aspect-[16/10] md:col-span-2",
-    },
-    images: [
-      {
-        image: "/projects/IMG_1953.webp",
-        alt: "ویلای مدرن لواسان",
-        aspect: "aspect-[4/5]",
-      },
-    ],
-    title: "ویلای مدرن لواسان",
-    category: "معماری و اجرا",
-    aspect: "aspect-[4/5]",
-    num: "05",
-    description:
-      "یک ویلای مدرن در لواسان با طراحی مینیمال و استفاده از متریال‌های با کیفیت برای ایجاد فضایی لوکس و راحت.",
-  },
-  {
-    mainImage: {
-      image: "/projects/IMG_4275.webp",
-      alt: "مجتمع مسکونی گلچین",
-      aspect: "aspect-[16/10] md:col-span-2",
-    },
-    images: [
-      {
-        image: "/projects/IMG_1834.webp",
-        alt: "نوسازی خانه‌ی قدیمی",
-        aspect: "aspect-[16/10] md:col-span-2",
-      },
-    ],
-    title: "نوسازی خانه‌ی قدیمی",
-    category: "بازسازی و نوسازی",
-    aspect: "aspect-[16/10] md:col-span-2",
-    num: "06",
-    description:
-      "بازسازی یک خانه‌ی قدیمی با هدف حفظ ارزش‌های تاریخی و ارتقاء کیفیت زندگی ساکنان.",
-  },
+  // {
+  //   mainImage: {
+  //     image: "/projects/IMG_4275.webp",
+  //     alt: "مجتمع مسکونی گلچین",
+  //     aspect: "aspect-[16/10] md:col-span-2",
+  //   },
+  //   images: [
+  //     {
+  //       image: "/projects/IMG_4275.webp",
+  //       alt: "مجتمع مسکونی گلچین",
+  //       aspect: "aspect-[16/10] md:col-span-2",
+  //     },
+  //   ],
+  //   title: "مجتمع مسکونی گلچین",
+  //   category: "اجرا و ساخت",
+  //   aspect: "aspect-[16/10] md:col-span-2",
+  //   num: "02",
+  //   description:
+  //     "یک مجتمع مسکونی با طراحی مدرن و امکانات رفاهی کامل، واقع در قلب شهر.",
+  // },
+  // {
+  //   mainImage: {
+  //     image: "/projects/IMG_4275.webp",
+  //     alt: "مجتمع مسکونی گلچین",
+  //     aspect: "aspect-[16/10] md:col-span-2",
+  //   },
+  //   images: [
+  //     {
+  //       image: "/projects/IMG_2716.webp",
+  //       alt: "بازسازی دفتر مرکزی",
+  //       aspect: "aspect-[3/4]",
+  //     },
+  //   ],
+  //   title: "بازسازی دفتر مرکزی",
+  //   category: "بازسازی و نوسازی",
+  //   aspect: "aspect-[3/4]",
+  //   num: "03",
+  //   description:
+  //     "بازسازی دفتر مرکزی یک شرکت با تمرکز بر بهبود بهره‌وری و زیبایی محیط کار.",
+  // },
+  // {
+  //   mainImage: {
+  //     image: "/projects/IMG_4275.webp",
+  //     alt: "مجتمع مسکونی گلچین",
+  //     aspect: "aspect-[16/10] md:col-span-2",
+  //   },
+  //   images: [
+  //     {
+  //       image: "/projects/IMG_2262.webp",
+  //       alt: "کافه‌رستوران باغ",
+  //       aspect: "aspect-[4/5]",
+  //     },
+  //   ],
+  //   title: "کافه‌رستوران باغ",
+  //   category: "طراحی داخلی",
+  //   aspect: "aspect-[4/5]",
+  //   num: "04",
+  //   description:
+  //     "طراحی داخلی کافه‌رستوران باغ با تمرکز بر ایجاد فضایی دلنشین و دعوت‌کننده برای مشتریان.",
+  // },
+  // {
+  //   mainImage: {
+  //     image: "/projects/IMG_4275.webp",
+  //     alt: "مجتمع مسکونی گلچین",
+  //     aspect: "aspect-[16/10] md:col-span-2",
+  //   },
+  //   images: [
+  //     {
+  //       image: "/projects/IMG_1953.webp",
+  //       alt: "ویلای مدرن لواسان",
+  //       aspect: "aspect-[4/5]",
+  //     },
+  //   ],
+  //   title: "ویلای مدرن لواسان",
+  //   category: "معماری و اجرا",
+  //   aspect: "aspect-[4/5]",
+  //   num: "05",
+  //   description:
+  //     "یک ویلای مدرن در لواسان با طراحی مینیمال و استفاده از متریال‌های با کیفیت برای ایجاد فضایی لوکس و راحت.",
+  // },
+  // {
+  //   mainImage: {
+  //     image: "/projects/IMG_4275.webp",
+  //     alt: "مجتمع مسکونی گلچین",
+  //     aspect: "aspect-[16/10] md:col-span-2",
+  //   },
+  //   images: [
+  //     {
+  //       image: "/projects/IMG_1834.webp",
+  //       alt: "نوسازی خانه‌ی قدیمی",
+  //       aspect: "aspect-[16/10] md:col-span-2",
+  //     },
+  //   ],
+  //   title: "نوسازی خانه‌ی قدیمی",
+  //   category: "بازسازی و نوسازی",
+  //   aspect: "aspect-[16/10] md:col-span-2",
+  //   num: "06",
+  //   description:
+  //     "بازسازی یک خانه‌ی قدیمی با هدف حفظ ارزش‌های تاریخی و ارتقاء کیفیت زندگی ساکنان.",
+  // },
 ];
 
 export const FOOTER_QUICK_LINKS: NavLink[] = [
