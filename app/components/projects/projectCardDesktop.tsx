@@ -13,7 +13,7 @@ export default function ProjectCardDesktop({ project }: { project: Project }) {
   const [showMain, setShowMain] = useState(false);
 
   return (
-    <section className="relative border-t pt-10 border-line overflow-hidden">
+    <section className="relative pt-10 overflow-hidden">
       <div className="mx-auto grid grid-cols-1 items-center gap-10 lg:h-[85vh] lg:grid-cols-[1fr_3fr] px-[6%] py-16 lg:py-0">
         <motion.div
           initial={{ opacity: 0, y: 28 }}

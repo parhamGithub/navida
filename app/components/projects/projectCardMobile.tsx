@@ -33,7 +33,7 @@ export default function ProjectCardMobile({ project }: { project: Project }) {
   }, [api]);
 
   return (
-    <section className="relative border-t border-line">
+    <section className="relative">
       <div className="px-[7%] py-14 sm:px-[6%]">
         <header className="mb-6">
           <div className="mb-2 font-serif text-[17px] font-semibold text-gold-dim">
