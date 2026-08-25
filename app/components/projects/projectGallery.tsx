@@ -64,8 +64,8 @@ export default function ProjectGallery({
   const count = images.length;
   const [page, setPage] = useState<number>(0);
 
-  const next = () => setPage((p) => (p + 1) % count);
-  const prev = () => setPage((p) => (p - 1 + count) % count);
+  const next = () => setPage((p) => (p + 3) % count);
+  const prev = () => setPage((p) => (p - 3 + count) % count);
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -78,7 +78,7 @@ export default function ProjectGallery({
             transition={{
               duration: showMain ? 0.5 : 0.45,
               ease: EASE,
-              delay: showMain ? (2 - col) * 0.14 : col * 0.3,
+              delay: 0,
             }}
             className="h-full min-h-0"
           >
