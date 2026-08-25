@@ -117,41 +117,41 @@ export const PROJECTS: Project[] = [
     images: [
       {
         image: "/projects/Villa/gazebo_night.webp",
-        alt: "آلاچیق ویلای بابلسر",
+        alt: "آلاچیق ویلای بابلسر در شب",
         aspect: "aspect-[3/4]",
       },
       {
         image: "/projects/Villa/garder_night.webp",
-        alt: "ویلای پلکانی کردان",
+        alt: "باغ ویلای بابلسر در شب",
         aspect: "aspect-[3/4]",
       },
       {
         image: "/projects/Villa/gazebo_sunset.webp",
-        alt: "ویلای پلکانی کردان",
+        alt: "آلاچیق ویلای بابلسر در غروب",
         aspect: "aspect-[3/4]",
       },
       {
         image: "/projects/Villa/villa_day.webp",
-        alt: "آلاچیق ویلای بابلسر",
+        alt: "ویلای بابلسر در روز",
         aspect: "aspect-[3/4]",
       },
       {
         image: "/projects/Villa/garder_day.webp",
-        alt: "ویلای پلکانی کردان",
+        alt: "باغ ویلای بابلسر در روز",
         aspect: "aspect-[3/4]",
       },
       {
         image: "/projects/Villa/gazebo_day.webp",
-        alt: "ویلای پلکانی کردان",
+        alt: "آلاچیق ویلای بابلسر در روز",
         aspect: "aspect-[3/4]",
       },
     ],
-    title: "ویلای پلکانی کردان",
+    title: "ویلای بابلسر",
     category: "معماری و اجرا",
     aspect: "aspect-[3/4]",
     num: "01",
     description:
-      "یک ویلای مدرن با طراحی پلکانی که با طبیعت اطراف خود هماهنگ است.",
+      "یک ویلای مدرن با طراحی پلکانی و نورپردازی که با طبیعت اطراف خود هماهنگ است.",
   },
   // {
   //   mainImage: {
