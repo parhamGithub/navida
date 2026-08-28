@@ -1,5 +1,3 @@
-"use client";
-
 import { FOOTER_CONTACT_ITEMS, FOOTER_QUICK_LINKS } from "@/app/data/content";
 import Logo from "@/app/components/Logo";
 
@@ -35,13 +33,13 @@ export default function Footer() {
           <h5 className="text-xs text-gold-dim tracking-[1px] mb-4 uppercase">
             تماس
           </h5>
-          {FOOTER_CONTACT_ITEMS.map((item) =>
+          {FOOTER_CONTACT_ITEMS.map((item, index) =>
             item.href ? (
-              <a key={item.label} href={item.href} className={linkClassName}>
+              <a key={index} href={item.href} className={linkClassName}>
                 {item.label}
               </a>
             ) : (
-              <p key={item.label} className={linkClassName}>
+              <p key={index} className={linkClassName}>
                 {item.label}
               </p>
             ),

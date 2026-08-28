@@ -40,7 +40,7 @@ export interface Project {
 }
 
 export interface ContactItem {
-  label: string;
+  label: string | ReactNode;
   href?: string;
 }
 

@@ -7,6 +7,8 @@ import type {
   Service,
   Stat,
 } from "@/app/types";
+import { Mail } from "lucide-react";
+import { BsInstagram, BsTelegram } from "react-icons/bs";
 
 export const EASE: CubicBezier = [0.65, 0, 0.35, 1];
 
@@ -263,8 +265,29 @@ export const FOOTER_QUICK_LINKS: NavLink[] = [
 ];
 
 export const FOOTER_CONTACT_ITEMS: ContactItem[] = [
-  { label: "۰۹۱۲۳۷۰۱۶۹۱" },
   { label: "تهران، خیابان قلعه مرغی، میدان گلچین، ساختمان امیران" },
-  { label: "navida-eng.ir", href: "#" },
-  { label: "@navida.eng", href: "#" },
+  {
+    label: (
+      <span className="text-[#ea4335]">
+        <Mail />
+      </span>
+    ),
+    href: "#",
+  },
+  {
+    label: (
+      <span className="text-[#0088cc]">
+        <BsTelegram size={23} />
+      </span>
+    ),
+    href: "#",
+  },
+  {
+    label: (
+      <span className="text-[#e4405f]">
+        <BsInstagram size={23} />
+      </span>
+    ),
+    href: "#",
+  },
 ];
