@@ -174,7 +174,7 @@ export const FOOTER_CONTACT_ITEMS: ContactItem[] = [
         <Mail />
       </span>
     ),
-    href: "#",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=Nmohammadnavid@gmail.com",
   },
   {
     label: (

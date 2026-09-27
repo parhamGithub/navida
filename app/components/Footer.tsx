@@ -35,7 +35,21 @@ export default function Footer() {
           </h5>
           {FOOTER_CONTACT_ITEMS.map((item, index) =>
             item.href ? (
-              <a key={index} href={item.href} className={linkClassName}>
+              <a
+                key={index}
+                href={item.href}
+                target={
+                  item.href.startsWith("https://mail.google.com/")
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  item.href.startsWith("https://mail.google.com/")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                className={linkClassName}
+              >
                 {item.label}
               </a>
             ) : (
