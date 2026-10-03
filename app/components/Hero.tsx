@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Logo from "@/app/components/Logo";
-import HeroReveal from "@/app/components/HeroReveal";
 import HeroScrollIndicator from "@/app/components/HeroScrollIndicator";
 
 export default function Hero() {
@@ -51,33 +50,22 @@ export default function Hero() {
           reveal
           className="w-40 mx-auto mb-7.5 md:w-44 max-w-[80vw] text-gold"
         />
-
-        <HeroReveal
-          delay={0.3}
-          duration={0.8}
-          className="font-serif italic text-xs tracking-[5px] text-gold-dim uppercase mb-6"
-        >
+        <p className="font-serif italic text-xs tracking-[5px] text-gold-dim uppercase mb-6">
           Navida — Engineering &amp; Architecture Group
-        </HeroReveal>
+        </p>
+        <h1 className="text-[clamp(30px,6vw,72px)] font-bold leading-[1.15] max-w-230 text-ivory">
+          طراحی معماری و سازه ساختمان با نگاه{" "}
+          <span className="text-amber-200">حرفه‌ای</span>،{" "}
+          <span className="text-amber-400">دقیق </span>و{" "}
+          <span className="text-gold">متناسب</span> با نیاز شما
+        </h1>
 
-        <HeroReveal delay={0.45} duration={1.1}>
-          <h1 className="text-[clamp(40px,8vw,96px)] font-bold leading-[1.15] max-w-230 text-ivory">
-            هر بنا، <span className="text-gold">نویدِ</span> حس امن بودن
-          </h1>
-        </HeroReveal>
-
-        <HeroReveal delay={0.65}>
-          <p className="max-w-155 mx-auto mt-6.5 text-[16.5px] leading-8 text-muted">
-            گروه فنی و مهندسی نویدا؛ از طراحی و نقشه‌کشی تا اجرا، بازسازی و
-            طراحی داخلی — همه در یک مجموعه‌ی یکپارچه، با یک استاندارد کیفی، تا
-            کلید تحویل پروژه.
-          </p>
-        </HeroReveal>
-
-        <HeroReveal
-          delay={0.85}
-          className="flex gap-4 mt-10 justify-center max-sm:flex-col max-sm:w-full max-sm:max-w-75 max-sm:mx-auto"
-        >
+        <p className="max-w-155 mx-auto mt-6.5 text-[18px] font-semibold leading-8 text-zinc-400">
+          ما در کنار کارفرمایان، سازندگان و مالکان پروژه هستیم تا برای
+          ساختمان‌های مسکونی، اداری و تجاری، طرحی ایمن، کاربردی و زیبا ارائه
+          کنیم.
+        </p>
+        <div className="flex gap-4 mt-10 justify-center max-sm:flex-col max-sm:w-full max-sm:max-w-75 max-sm:mx-auto">
           <a
             href="#contact"
             className="inline-flex items-center gap-2.5 bg-gold text-black text-[14.5px] font-bold px-8.5 
@@ -93,7 +81,7 @@ export default function Hero() {
           >
             مشاهده‌ی خدمات
           </a>
-        </HeroReveal>
+        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-100 bg-linear-to-t from-black to-transparent z-10 pointer-events-none" />
