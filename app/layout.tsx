@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -21,8 +21,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "نویدا | گروه فنی و مهندسی",
-  description:
-    "گروه فنی و مهندسی نویدا — طراحی، اجرا، بازسازی و طراحی داخلی",
+  description: "گروه فنی و مهندسی نویدا — طراحی، اجرا، بازسازی و طراحی داخلی",
 };
 
 export default function RootLayout({
@@ -34,12 +33,24 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
-      className={cn(vazirmatn.variable, cormorant.variable, "font-sans", geist.variable)}
+      className={cn(
+        vazirmatn.variable,
+        cormorant.variable,
+        "font-sans",
+        geist.variable,
+      )}
     >
+      <head>
+        <meta
+          name="ahrefs-site-verification"
+          content="7f10ea2cfb62eb167663d3c00ec974598bd15de71cc3c00de5f2786cb389d726"
+        ></meta>
+      </head>
       <body>
         <Header />
         {children}
-        <Footer /></body>
+        <Footer />
+      </body>
     </html>
   );
 }
