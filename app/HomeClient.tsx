@@ -1,5 +1,6 @@
 import Hero from "@/app/components/Hero";
 import About from "@/app/components/About";
+import CompanyDescription from "@/app/components/CompanyDescription";
 import Services from "@/app/components/Services";
 import Process from "@/app/components/Process";
 import Projects from "@/app/components/Projects";
@@ -11,6 +12,7 @@ export default function HomeClient() {
     <>
       <HomeLoader />
       <Hero />
+      <CompanyDescription />
       <Projects />
       <About />
       <Process />

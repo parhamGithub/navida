@@ -60,28 +60,11 @@ export default function Hero() {
           <span className="text-gold">متناسب</span> با نیاز شما
         </h1>
 
-        <p className="max-w-155 mx-auto mt-6.5 text-[18px] font-semibold leading-8 text-zinc-400">
+        <p className="max-w-155 mx-auto mt-6.5 text-[15px] lg:text-[18px] font-semibold leading-8 text-zinc-400">
           ما در کنار کارفرمایان، سازندگان و مالکان پروژه هستیم تا برای
           ساختمان‌های مسکونی، اداری و تجاری، طرحی ایمن، کاربردی و زیبا ارائه
           کنیم.
         </p>
-        <div className="flex gap-4 mt-10 justify-center max-sm:flex-col max-sm:w-full max-sm:max-w-75 max-sm:mx-auto">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2.5 bg-gold text-black text-[14.5px] font-bold px-8.5 
-            py-3.5 rounded-xs no-underline transition-all duration-250 hover:bg-gold-light hover:-translate-y-0.5"
-          >
-            درخواست مشاوره رایگان
-          </a>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2.5 border border-cream/25 text-cream text-[14.5px] 
-            font-semibold px-8.5 py-3.5 rounded-xs no-underline tracking-[.3px] transition-all duration-250 
-            hover:border-gold-light hover:text-gold-light hover:-translate-y-0.5"
-          >
-            مشاهده‌ی خدمات
-          </a>
-        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-100 bg-linear-to-t from-black to-transparent z-10 pointer-events-none" />
